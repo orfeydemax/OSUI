@@ -1,0 +1,13 @@
+# V8 Routing Decision Record
+# Template: §20.9
+# Usage: Every routed change — documents track selection
+
+change_id:
+selected_track: nano|core|extended|critical|hotfix
+routing_score:
+routing_score_reasoning:
+forced_escalation_reason:
+required_artifacts: []
+forbidden_shortcuts: []
+approved_by:
+approved_at:

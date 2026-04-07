@@ -1,0 +1,30 @@
+# Environment
+.env
+.env.*
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+
+# Media / uploads
+media/
+
+# Temporary
+.tmp/
+__pycache__/
+*.pyc
+
+# Credentials (never commit)
+credentials.json
+token.json

@@ -1,0 +1,23 @@
+# V8 AI Evidence Log
+# Template: §20.15
+# Usage: When AI materially participated in change
+
+change_id:
+ai_mode: human_only|ai_assisted|ai_heavy
+ai_operator:
+materials_used:
+  - type:
+    ref:
+tasks_performed:
+  - analysis
+  - drafting
+  - coding
+  - testing
+  - summarization
+ai_outputs:
+  - artifact:
+    status:
+human_review_required: true|false
+human_reviewer:
+final_adopted: true|false
+notes:

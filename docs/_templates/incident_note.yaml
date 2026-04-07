@@ -1,0 +1,14 @@
+# V8 Incident Note
+# Template: §20.17
+# Usage: Bug intake / incidents
+
+incident_id:
+change_id:
+detected_at:
+source: human|system
+symptom:
+affected_area:
+severity:
+prod_incident: true|false
+owner:
+triage_status: candidate|confirmed|incident|hotfix|false_positive

@@ -1,0 +1,18 @@
+# V8 Change Passport
+# Template: §20.4
+# Usage: Core+ tracks — scope and risk assessment
+
+change_type:
+change_scope:
+touched_entities: []
+touched_roles: []
+touched_interfaces: []
+touched_data: []
+touched_services: []
+touched_modules: []
+history_risk:
+client_risk:
+business_risk:
+production_risk:
+initial_track_guess:
+owner:

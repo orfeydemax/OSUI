@@ -1,0 +1,73 @@
+# V8 Source-of-Truth Change Card
+# Template: §20.1
+# Usage: Every change — this is the single source of truth
+
+id: CHG-YYYY-MM-DD-XX
+title:
+stage: clay|clarification|plan|framing|route|build|verify|release|observation|normalization|done
+track: nano|core|extended|critical|hotfix
+change_type: feature|enhancement|bugfix|migration|infra|automation|skill|other
+
+human_owner:
+routing_owner:
+implementer:
+approver:
+ai_operator:
+
+summary:
+problem_statement:
+expected_outcome:
+failure_definition:
+what_must_not_break:
+
+touched_entities: []
+touched_roles: []
+touched_interfaces: []
+touched_data: []
+touched_services: []
+touched_modules: []
+
+history_risk: none|low|medium|high
+client_risk: none|low|medium|high
+business_risk: none|low|medium|high
+production_risk: none|low|medium|high
+
+current_reality_audit_required: true|false
+current_reality_audit_status: not_required|pending|in_progress|completed
+
+framing_required: true|false
+framing_status: not_required|pending|in_progress|completed
+brief_origin_status: not_started|draft|pending_human|approved|rejected|blocked|escalated
+six_hats_status: not_started|draft|completed|waived
+cjm_product_flow_delta_status: not_required|pending|completed
+
+routing_score:
+routing_score_reasoning:
+forced_escalation_reason:
+nano_eligibility: true|false
+
+ai_mode: human_only|ai_assisted|ai_heavy
+ai_evidence_log_required: true|false
+documentation_update_status: not_started|pending|completed
+
+gates:
+  problem_definition: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  brief_origin: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  business_priority: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  contradiction_resolution: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  track_approval: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  verification_go: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  release_approval: not_started|draft|pending_human|approved|rejected|blocked|escalated
+  rollback_restore_decision: not_started|draft|pending_human|approved|rejected|blocked|escalated
+
+verification_verdict: not_started|pass|pass_with_conditions|fail
+observation_status: not_started|not_required|in_progress|completed
+normalization_status: not_started|not_needed|planned|in_progress|closed
+methodology_review_status: not_needed|pending|completed
+
+active_risks: []
+open_blockers: []
+open_assumptions: []
+next_action:
+source_of_truth:
+updated_at:

@@ -1,0 +1,12 @@
+# V8 Exception Record
+# Template: §20.18
+# Usage: Formally recorded deviations from the standard
+
+exception_id:
+change_id:
+rule_violated:
+reason:
+accepted_risk:
+owner:
+approved_by:
+valid_until:

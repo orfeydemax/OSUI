@@ -1,0 +1,14 @@
+# V8 Economics Gate
+# Template: §20.3
+# Usage: Core+ tracks — validates business value before proceeding
+
+problem_or_opportunity:
+winning_subject:
+user_value:
+business_value:
+cost_of_inaction:
+expected_success_signal:
+owner:
+approved: true|false
+approved_by:
+approved_at:
