@@ -142,18 +142,65 @@
 
 ---
 
+## Maturity Breakdown
+
+### Завершено полностью
+
+| Область | Что сделано |
+|---------|-----------|
+| **Policy layer** | GEMINI.md V9.1 (6661 bytes, 16 Forbidden Transitions, 4 Brownfield Safeguards, 8 Human Gates) |
+| **Workflow hardening** | context.md (Warm-Enhance), enhance.md (baseline + contract), route.md (pre-routing gates + STOP), verify.md (4 verdicts + protected perimeter), release.md (memory sync) |
+| **Rule files** | SANDBOX_FIRST.md (P0), server-access.md, architecture-reference.md, supabase-schema-protocol.md |
+| **Registry layer** | PRODUCT_SURFACE_STATE.yaml, SITE_HISTORY_LOG.md, HARNESS_CAPABILITIES.yaml — все существуют и обновлены |
+| **Templates** | 5 V9.1 templates (current_reality_snapshot, protected_behavior_contract, removal_delta, regression_guard_matrix, harness_gap_report) |
+| **Baseline pipeline** | capture_baseline.py → collect_surface_diff.py — runtime tested, end-to-end |
+| **Release pipeline** | emit_release_trace.py (+ W-12 CHANGELOG check) — runtime tested |
+| **Freshness pipeline** | check_registry_freshness.py (--strict, --check-surfaces) — runtime tested |
+| **Pilot cycle** | 2 pilots completed (1 registry update, 1 honest brownfield code change) with full change packets |
+| **Weakness management** | 15 weaknesses tracked, 4 closed (W-6, W-7, W-8b, W-11, W-12), остальные со статусами |
+
+### Hardened partially
+
+| Область | Что не дожато | Причина |
+|---------|-------------|--------|
+| **Verify automation** | replay_protected_flow.py генерирует checklist, не assertions. Фактическая верификация = ad-hoc inline Python | W-13: нет assertion mode. Скрипт = reminder, не verifier |
+| **Surface diff scope** | collect_surface_diff.py видит только 2 YAML registry файла. Изменения в .py/.md невидимы | W-14: design limitation. Code diff = git diff |
+| **CHANGELOG automation** | emit_release_trace.py ловит stale CHANGELOG (warning), но не генерирует entries | W-15: deferred. Manual update required |
+| **Harness capabilities** | 4/10 scripts working + tested, 1/10 partial, 5/10 legacy untested | W-3, W-9, W-10: 2 blocked by external deps |
+| **Track Approval STOP** | Patched в route.md, но не протестирован на live change (оба pilot его нарушили до patch) | Patch applied post-pilot |
+
+### Остаётся в waiver / blocked / deferred
+
+| # | Weakness | Status | Что это значит |
+|---|----------|--------|---------------|
+| W-1 | Generic workflows | Accepted | Workflows не project-specific, но не false |
+| W-2 | Single history entry | Accepted | Было 1, стало 3. Не blocker |
+| W-3 | 2/6 harness partial | Accepted | Automation coverage = partial |
+| W-5 | Agent fit routing | Accepted (waiver) | Fit scoring = heuristic, не exact |
+| W-9 | replay = partial | Blocked (external) | Нет target app для E2E |
+| W-10 | targeted verify = partial | Blocked (external) | Нет package.json в workspace |
+| W-13 | Ad-hoc verification | Accepted (waiver) | Core: допустимо. Extended+: нужен assertion mode |
+| W-14 | surface_diff blind to code | Accepted (design) | By design. Code = git diff |
+| W-15 | CHANGELOG not automated | Deferred | W-12 warning ловит пропуск. Генерация = future |
+
+---
+
 ## Финальный статус
 
-### `migration_complete`
+### `migration_partially_hardened`
 
-**Обоснование:**
-1. 28/28 acceptance criteria = PASS
-2. 4/4 final prohibitions cleared
-3. Baseline path работает (runtime tested)
-4. Release trace path работает (runtime tested)
-5. Verify знает `fail_harness_insufficient` (4 references in verify.md)
-6. Product memory обновляется вместе с release (12 references in release.md)
-7. Two honest pilots completed with retro reports
-8. 9 known waivers — none is a blocker
+**Что hardened:**
+- Policy layer — полностью (GEMINI.md, 5 workflows, 4 rule files)
+- Registry layer — полностью (3 registries + 5 templates)
+- Baseline → Release trace pipeline — работает (4 scripts runtime tested)
+- Pilot cycle — пройден (2 pilots, 17 behaviors verified, 2 retro reports)
 
-**Known waivers не отменяют `migration_complete`.** Они обозначают tooling limitations, не policy gaps. Policy layer (GEMINI.md, route.md, verify.md, release.md, enhance.md, context.md) полностью hardened. Automation layer — частично automated, частично manual, честно задокументирована.
+**Что partial:**
+- Automation layer — 4/10 scripts working, 1 partial, 5 legacy
+- Verify automation — checklist, не assertions (W-13)
+- Surface diff — registries only (W-14)
+- CHANGELOG — warning only, не generation (W-15)
+- 2 capabilities blocked by external dependencies (W-9, W-10)
+
+**Что это значит для рабочего использования:**
+Antigravity может использовать V9.1 контур для brownfield changes: route → enhance → verify → release. Policy gates работают. Baseline и release trace работают. Protected behavior contract → verify evidence pipeline проверен на live code. Automation gaps покрыты manual workarounds и honest waivers. Полная автоматизация verify/replay требует target application и assertion mode в replay_protected_flow.py — это следующий эволюционный шаг, не текущая миграция.
