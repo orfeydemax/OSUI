@@ -26,8 +26,8 @@ architecture:
   agents: 20
   skills: 61
   workflows: 19
-  templates: 19
-  registries: 8  # 6 existing + PRODUCT_SURFACE_STATE + HARNESS_CAPABILITIES
+  templates: 24  # 19 V8 + 5 V9.1 baseline
+  registries: 9  # 6 V8 + PRODUCT_SURFACE_STATE + HARNESS_CAPABILITIES + SITE_HISTORY_LOG
   core_modules:
     - "Lifecycle: Clay → Plan → Frame → Route → Build → Verify → Release → Done"
     - "Track System: Nano / Core / Extended / Critical / Hotfix"
@@ -54,8 +54,8 @@ protected_capabilities:
 # Активные UI-surface (для этого проекта = docs/templates/workflows)
 active_ui_surfaces:
   - "docs/ — Human Layer"
-  - "docs/_templates/ — 19 canonical templates"
-  - "docs/00_Registry/ — 8 registries"
+  - "docs/_templates/ — 24 templates (19 V8 + 5 V9.1)"
+  - "docs/00_Registry/ — 9 registries"
   - ".agent/workflows/ — 19 slash-commands"
 
 # Известные связности (couplings)
@@ -81,7 +81,7 @@ decisions:
 # Активные изменения
 active_changes:
   - id: "CHG-V9_1-Migration"
-    stage: "Phase 2 — ORIENT"
+    stage: "Phase 2 — ORIENT (quality gate)"
     track: "Critical"
 
 completed_changes: []

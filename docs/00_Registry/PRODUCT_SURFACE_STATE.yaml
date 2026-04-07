@@ -24,12 +24,12 @@ surfaces:
         description: "Правила Hot/Warm/Cold загрузки контекста"
       - name: "_templates/"
         status: "active"
-        description: "19 canonical шаблонов V8"
-        count: 19
+        description: "24 шаблона (19 V8 + 5 V9.1 baseline)"
+        count: 24
       - name: "00_Registry/"
-        status: "active_empty"
-        description: "8 реестров (6 пустых V8 + 2 новых V9.1)"
-        count: 8
+        status: "active_partial"
+        description: "9 реестров (6 пустых V8 + 3 новых V9.1)"
+        count: 9
 
   machine_layer:
     status: "active"
