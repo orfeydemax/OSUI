@@ -24,8 +24,11 @@ structured checklist для ручной верификации каждого b
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 from datetime import datetime, timezone
+
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 
 def parse_contract(contract_path: Path) -> list[dict]:

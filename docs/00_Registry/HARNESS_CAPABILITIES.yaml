@@ -34,9 +34,11 @@ capabilities:
     status: "partial"
     description: "Запуск целевой верификации конкретного изменения"
     implementation: ".agent/scripts/checklist.py, verify_all.py"
+    tested: false
     gaps:
       - "Скрипты не тестировались в текущем контексте"
       - "Требуют target project с package.json"
+    blocked_by: "Отсутствие target project с package.json в текущем workspace"
 
   collect_surface_diff:
     status: "working"
