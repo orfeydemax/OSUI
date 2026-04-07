@@ -124,14 +124,28 @@ Use template: `docs/_templates/routing_decision.yaml`
 - `track: <selected>`
 - `routing_score: <score>`
 - `routing_score_reasoning: <reasoning>`
-- `stage: route → build` (after approval)
+- `stage: route` (NOT `build` — stage changes ONLY after human approval)
 - `gates.track_approval: pending_human`
 
-### 8. Human Gate: Track Approval
-Present routing decision to human owner for approval.
-- If approved → `gates.track_approval: approved`, move to `/build`
-- If rejected → return to `/frame` or `/plan`
-- If escalated → escalate track
+### ⛔ STOP — Track Approval Gate (W-11 enforcement)
+
+**AI MUST stop here.** Do NOT proceed to `/build`, `/enhance`, or `/create`.
+
+Present to the human:
+1. Selected track and score
+2. Routing score reasoning
+3. Pre-routing gate results (Step 0a–0c)
+4. Required artifacts list
+5. Forced escalation triggers (if any)
+
+**Wait for human response:**
+- `approved` → set `gates.track_approval: approved`, set `stage: build`, proceed to `/build`
+- `rejected` → return to `/frame` or `/plan`
+- `escalated` → escalate track, re-run Step 3–4
+
+**This is a Human Gate. AI cannot close it. AI cannot assume approval.**
+**Two consecutive pilots (CHG-V9_1-PILOT, CHG-V9_1-PILOT-2) violated this gate. This STOP exists to prevent recurrence.**
+
 
 ## Output
 - Routing Decision Record (`routing_decision.yaml`)
