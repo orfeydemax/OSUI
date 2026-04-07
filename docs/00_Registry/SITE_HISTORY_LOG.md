@@ -32,6 +32,12 @@
 **Последствия:** PRODUCT_SURFACE_STATE.yaml обновлён (scripts 5→10, protected behaviors 5→9, version alpha→beta)
 **Артефакты:** `docs/In_Progress/CHG-V9_1-PILOT/` (change_card, reality snapshot, contract, verify evidence)
 
+### 2026-04-08 | Pilot-2 Change | Info
+**Событие:** CHG-V9_1-PILOT-2 — честный brownfield pilot (модификация emit_release_trace.py)
+**Причина:** Phase 7 — W-12 closure, добавление CHANGELOG check в release pipeline
+**Последствия:** emit_release_trace.py расширен: новое поле changelog_check в JSON, warning при stale CHANGELOG
+**Артефакты:** `docs/In_Progress/CHG-V9_1-PILOT-2/`, `.tmp/traces/CHG-V9_1-PILOT-2_release_trace.json`
+
 ---
 
 > **Правило:** CHANGELOG ≠ SITE_HISTORY_LOG.

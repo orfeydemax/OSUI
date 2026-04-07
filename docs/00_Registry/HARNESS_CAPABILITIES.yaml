@@ -64,11 +64,12 @@ capabilities:
 
   emit_release_trace:
     status: "working"
-    description: "Генерация structured release trace"
+    description: "Генерация structured release trace + CHANGELOG check (W-12)"
     implementation: ".agent/scripts/emit_release_trace.py"
     what_it_does:
       - "Создаёт JSON trace: chg_id, git commit/tag, verdict, perimeter, memory sync"
       - "Привязывает baseline_ref из capture_baseline.py"
+      - "W-12: Проверяет, обновлён ли CHANGELOG.md после baseline capture"
       - "Сохраняет в .tmp/traces/{change_id}_release_trace.json"
     tested: true
     gaps: []

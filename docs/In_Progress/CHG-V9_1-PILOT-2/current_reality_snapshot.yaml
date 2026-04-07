@@ -1,0 +1,48 @@
+# Current Reality Snapshot — CHG-V9_1-PILOT-2
+
+```yaml
+change_id: CHG-V9_1-PILOT-2
+captured_at: 2026-04-08
+baseline_git_commit: cc61eaf
+
+target_file: .agent/scripts/emit_release_trace.py
+target_size: 4197 bytes (119 lines)
+target_status: working (tested in Phase 6)
+
+current_behavior:
+  cli_args:
+    - "--change-id (required)"
+    - "--verdict (required, choices: pass/pass_with_waiver/fail/fail_harness_insufficient)"
+    - "--perimeter (default: not_applicable)"
+    - "--memory-sync (default: complete)"
+    - "--surfaces (comma-separated)"
+    - "--removals (comma-separated)"
+  output_json_keys:
+    - "release_trace.chg_id"
+    - "release_trace.released_at"
+    - "release_trace.git_commit"
+    - "release_trace.git_tag"
+    - "release_trace.verification_verdict"
+    - "release_trace.protected_perimeter_status"
+    - "release_trace.memory_sync_status"
+    - "release_trace.surfaces_affected"
+    - "release_trace.removals"
+    - "release_trace.baseline_ref"
+  exit_codes: "0 always"
+  output_file: ".tmp/traces/{change_id}_release_trace.json"
+  changelog_awareness: none  # <-- THIS IS THE GAP
+
+drift_detected:
+  - "No CHANGELOG.md check exists anywhere in release pipeline"
+  - "Definition of Done requires CHANGELOG update, but no script enforces it"
+  - "W-12 from CHG-V9_1-PILOT retro documented this gap"
+
+neighboring_files:
+  - capture_baseline.py: reads baseline manifest (coupling via .tmp/baselines/)
+  - check_registry_freshness.py: no direct coupling
+  - collect_surface_diff.py: no direct coupling
+  - release.md: calls emit_release_trace conceptually (not automated)
+  - docs/CHANGELOG.md: target of the new check
+
+assessment: "emit_release_trace.py is a working script with a documented gap: no CHANGELOG verification. W-12 identified this. Fix requires adding a function + JSON field without breaking existing output."
+```

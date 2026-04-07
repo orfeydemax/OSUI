@@ -5,6 +5,8 @@ emit_release_trace.py — Генерация structured release trace.
 Связывает change_id, baseline refs, verify verdict и release info
 в единый JSON-артефакт для CHANGELOG и Change Card.
 
+Дополнительно проверяет, был ли обновлён CHANGELOG.md после baseline capture (W-12).
+
 Использование:
     python emit_release_trace.py --change-id CHG-XXXX --verdict pass --surfaces homepage,booking [--removals none]
 """
@@ -63,6 +65,43 @@ def check_baseline_exists(change_id: str) -> dict:
     return {"exists": False}
 
 
+def check_changelog_updated(change_id: str) -> dict:
+    """W-12: Check if CHANGELOG.md was modified after baseline capture."""
+    changelog_path = ROOT / "docs" / "CHANGELOG.md"
+    if not changelog_path.exists():
+        return {"status": "missing", "warning": "CHANGELOG.md does not exist"}
+
+    # Get baseline capture time
+    baseline_dir = ROOT / ".tmp" / "baselines" / change_id
+    manifest_path = baseline_dir / "baseline_manifest.json"
+
+    if not manifest_path.exists():
+        # No baseline — cannot compare, just check file exists
+        return {"status": "no_baseline", "warning": "No baseline to compare against"}
+
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    baseline_time_str = manifest.get("captured_at", "")
+    if not baseline_time_str:
+        return {"status": "no_baseline_time", "warning": "Baseline has no timestamp"}
+
+    baseline_time = datetime.fromisoformat(baseline_time_str)
+    changelog_mtime = datetime.fromtimestamp(
+        changelog_path.stat().st_mtime, tz=timezone.utc
+    )
+
+    if changelog_mtime > baseline_time:
+        return {"status": "updated", "warning": None}
+    else:
+        return {
+            "status": "stale",
+            "warning": f"CHANGELOG.md was NOT updated after baseline capture ({baseline_time_str}). Definition of Done requires CHANGELOG update.",
+            "changelog_last_modified": changelog_mtime.isoformat(),
+            "baseline_captured_at": baseline_time_str,
+        }
+
+
 def emit_trace(change_id: str, verdict: str, perimeter_status: str,
                memory_sync_status: str, surfaces: list[str],
                removals: list[str]) -> dict:
@@ -79,6 +118,7 @@ def emit_trace(change_id: str, verdict: str, perimeter_status: str,
             "surfaces_affected": surfaces,
             "removals": removals if removals else ["none"],
             "baseline_ref": check_baseline_exists(change_id),
+            "changelog_check": check_changelog_updated(change_id),
         }
     }
 
@@ -110,6 +150,12 @@ def main():
     )
 
     print(json.dumps(trace, indent=2, ensure_ascii=False))
+
+    # W-12: CHANGELOG warning
+    changelog_status = trace["release_trace"]["changelog_check"]
+    if changelog_status.get("warning"):
+        print(f"\n⚠️  W-12 WARNING: {changelog_status['warning']}")
+
     print(f"\n✅ Release trace emitted: .tmp/traces/{args.change_id}_release_trace.json")
     return 0
 
