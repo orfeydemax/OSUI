@@ -1,0 +1,84 @@
+# PRODUCT_SURFACE_STATE.yaml — Карта текущего состояния продукта
+# Используется при Current Reality Audit (/enhance §1)
+# Обновляется при каждом /release
+
+product_name: "V9 OSUI"
+last_updated: "2026-04-08"
+surface_version: "9.1.0-alpha"
+
+# Существующие поверхности системы
+surfaces:
+
+  human_layer:
+    status: "active"
+    path: "docs/"
+    components:
+      - name: "00_INDEX.md"
+        status: "active"
+        description: "Корневой индекс документации"
+      - name: "CHANGELOG.md"
+        status: "active_empty"
+        description: "Реестр завершённых CHG — шаблон без записей"
+      - name: "context-loading-rules.md"
+        status: "active"
+        description: "Правила Hot/Warm/Cold загрузки контекста"
+      - name: "_templates/"
+        status: "active"
+        description: "19 canonical шаблонов V8"
+        count: 19
+      - name: "00_Registry/"
+        status: "active_empty"
+        description: "8 реестров (6 пустых V8 + 2 новых V9.1)"
+        count: 8
+
+  machine_layer:
+    status: "active"
+    path: ".agent/"
+    components:
+      - name: "ARCHITECTURE.md"
+        status: "active"
+        description: "Полная архитектура системы"
+      - name: "rules/GEMINI.md"
+        status: "active"
+        description: "AI behavior rules, P0 priority"
+      - name: "agents/"
+        status: "active"
+        count: 20
+      - name: "skills/"
+        status: "active"
+        count: 61
+      - name: "workflows/"
+        status: "active"
+        count: 19
+      - name: "scripts/"
+        status: "active_untested"
+        description: "5 validation scripts (не запускались в текущем контексте)"
+        count: 5
+
+  root_files:
+    status: "active"
+    components:
+      - name: "PROJECT_BRAIN.yaml"
+        status: "active"
+        description: "Hot Load контекст проекта"
+      - name: "AGENTS.md"
+        status: "active"
+        description: "Навигационный справочник агентов"
+      - name: ".gitignore"
+        status: "active"
+        description: "Git exclusion rules"
+
+# Текущие gaps
+known_gaps:
+  - "CHANGELOG.md содержит только шаблон формата, нет записей"
+  - "6 реестров V8 в 00_Registry/ пустые"
+  - "Verification scripts не тестировались"
+  - "docs/Done/ пустой — ни одного завершённого CHG"
+
+# Защищённые поведения (не менять без Critical Track)
+protected_behaviors:
+  - "10 Forbidden Transitions в GEMINI.md §9.3"
+  - "8 Human Gates в GEMINI.md §5"
+  - "Token Budget Guard — Done/ сканирование запрещено"
+  - "Agent announcement protocol"
+  - "Frame обязателен для всех треков"

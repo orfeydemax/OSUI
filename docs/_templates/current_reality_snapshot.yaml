@@ -1,0 +1,41 @@
+# Current Reality Snapshot
+# Шаблон для фиксации текущего состояния системы перед /enhance
+# Заполняется AI на шаге Current Reality Audit (enhance.md §1)
+
+change_id: ""
+snapshot_date: ""
+snapshot_author: ""  # AI agent name
+
+# Как система работает сейчас
+as_is_summary: ""
+
+# Снимок реализации
+implemented_system_snapshot:
+  modules: []
+  endpoints: []
+  database_tables: []
+  ui_screens: []
+
+# Затронутые модули
+touched_modules: []
+
+# Активные контракты (API, интеграции, зависимости)
+active_contracts: []
+
+# Устаревшие документы
+outdated_docs: []
+
+# Расхождения (код ↔ документация ↔ данные ↔ поведение)
+drift_findings: []
+
+# Найденные противоречия
+contradiction_findings: []
+
+# Влияние на маршрутизацию
+routing_impact: ""  # none | minor | re-route_required
+
+# Уровень уверенности
+audit_confidence_level: ""  # high | medium | low
+
+# Результат аудита
+current_reality_audit_status: ""  # completed | partial | blocked

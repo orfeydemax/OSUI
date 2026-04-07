@@ -1,0 +1,96 @@
+# PROJECT_BRAIN.yaml — V9 OSUI
+# Сжатое полное знание проекта. Читается AI при КАЖДОМ старте задачи.
+# Правило: ≤100 строк, ≤1500 токенов.
+
+project_name: "V9 OSUI — Operating System for Change Management"
+current_version: "9.1.0-alpha"
+current_prod_version: null  # нет production-деплоя, это фреймворк
+current_prod_commit_or_tag: null
+last_verified_baseline_at: "2026-04-08"
+last_verified_baseline_source: "docs/In_Progress/CHG-V9_1-OBSERVE-REPO-AUDIT.md"
+
+# Стек
+stack:
+  runtime: "Antigravity AI Agent (IDE-integrated)"
+  languages: ["YAML", "Markdown", "Python"]
+  infra: ["Git", "Supabase", "VPS 116.118.9.78"]
+  key_files:
+    - ".agent/rules/GEMINI.md"      # P0 — AI behavior rules
+    - ".agent/ARCHITECTURE.md"       # Cold — full architecture
+    - "docs/00_INDEX.md"             # Human layer root
+    - "docs/CHANGELOG.md"           # Warm — change history
+
+# Архитектура
+architecture:
+  layers: ["Human (docs/)", "Machine (.agent/)"]
+  agents: 20
+  skills: 61
+  workflows: 19
+  templates: 19
+  registries: 8  # 6 existing + PRODUCT_SURFACE_STATE + HARNESS_CAPABILITIES
+  core_modules:
+    - "Lifecycle: Clay → Plan → Frame → Route → Build → Verify → Release → Done"
+    - "Track System: Nano / Core / Extended / Critical / Hotfix"
+    - "Human Gates: 8 mandatory approval points"
+    - "Context Budget: Hot / Warm / Cold (§23)"
+    - "Git Protocol: branch → commit → tag (§12)"
+
+# Ключевые пользовательские потоки
+key_user_flows:
+  - "Принять сырой запрос → /clay → структурированный черновик"
+  - "Оценить и маршрутизировать → /frame → /route → Track + Score"
+  - "Реализовать → /build (/create | /enhance | /debug)"
+  - "Верифицировать → /verify → evidence + verdict"
+  - "Выпустить → /release → observation → done"
+
+# Защищённые поведения (не ломать при enhance)
+protected_capabilities:
+  - "Forbidden Transitions (§9.3) — 10 запретов"
+  - "Human Gates — AI не может закрывать"
+  - "Token Budget Guard — Done/ никогда не сканировать целиком"
+  - "Agent announcement — обязательно до кода"
+  - "Frame обязателен для всех треков"
+
+# Активные UI-surface (для этого проекта = docs/templates/workflows)
+active_ui_surfaces:
+  - "docs/ — Human Layer"
+  - "docs/_templates/ — 19 canonical templates"
+  - "docs/00_Registry/ — 8 registries"
+  - ".agent/workflows/ — 19 slash-commands"
+
+# Известные связности (couplings)
+known_couplings:
+  - "release.md §9.7 → PROJECT_BRAIN.yaml (обязательное обновление)"
+  - "context.md → PROJECT_BRAIN.yaml (Hot Load)"
+  - "GEMINI.md §7 → PROJECT_BRAIN.yaml (обязательное чтение)"
+  - "enhance.md §1 → PRODUCT_SURFACE_STATE.yaml (Current Reality Audit)"
+
+# Активные риски
+active_risks:
+  - "CHANGELOG.md пустой — Warm Load не даёт истории"
+  - "Registries все пустые — нет исторических решений"
+  - "ARCHITECTURE.md числа не соответствовали факту (исправлено Phase 2)"
+
+# Решения
+decisions:
+  - id: "ADR-001"
+    date: "2026-04-08"
+    title: "Миграция V8→V9.1 через OODA-фазы"
+    status: "in_progress"
+
+# Активные изменения
+active_changes:
+  - id: "CHG-V9_1-Migration"
+    stage: "Phase 2 — ORIENT"
+    track: "Critical"
+
+completed_changes: []
+
+# Документы Source of Truth
+source_of_truth_docs:
+  - "PROJECT_BRAIN.yaml (этот файл)"
+  - ".agent/rules/GEMINI.md"
+  - "docs/00_INDEX.md"
+  - "change_card.yaml (для каждого CHG)"
+
+last_updated: "2026-04-08"

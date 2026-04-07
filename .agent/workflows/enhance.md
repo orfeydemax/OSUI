@@ -69,11 +69,11 @@ Update Change Card:
 - Preserve compatibility with existing code (§6.4)
 - Apply compatibility layer / mapping / migration logic if needed
 
-### 4. AI Evidence Trail
+### 5. AI Evidence Trail
 If `ai_evidence_log_required: true`:
 - Prepare `ai_evidence_log.yaml`
 
-### 5. Update Change Card
+### 6. Update Change Card
 - `next_action: verify`
 - Update risks and blockers
 

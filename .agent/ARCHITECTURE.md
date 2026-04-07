@@ -1,4 +1,4 @@
-# Antigravity Kit Architecture — V8 OSUI
+# Antigravity Kit Architecture — V9 OSUI
 
 > Operating System for Change Management — Universal Framework
 
@@ -9,8 +9,8 @@
 Antigravity Kit is a modular system operating under **V8 OSUI** (Operating System for Change Management):
 
 - **20 Specialist Agents** — Role-based AI personas
-- **36 Skills** — Domain-specific knowledge modules
-- **18 Workflows** — V8 lifecycle + build mode commands
+- **61 Skills** — Domain-specific knowledge modules
+- **19 Workflows** — V9 lifecycle + build mode commands
 - **2 Layers** — Human (`docs/`) + Machine (`.agent/`)
 - **5 Tracks** — Nano / Core / Extended / Critical / Hotfix
 
@@ -93,9 +93,9 @@ Specialist AI personas for different domains.
 
 ---
 
-## 🧩 Skills (36)
+## 🧩 Skills (61)
 
-Modular knowledge domains that agents can load on-demand. based on task context.
+Modular knowledge domains that agents can load on-demand based on task context.
 
 ### Frontend & UI
 
@@ -319,10 +319,10 @@ For details, see [scripts/README.md](scripts/README.md)
 | Metric              | Value                         |
 | ------------------- | ----------------------------- |
 | **Total Agents**    | 20                            |
-| **Total Skills**    | 36                            |
-| **Total Workflows** | 11                            |
-| **Total Scripts**   | 2 (master) + 18 (skill-level) |
-| **Coverage**        | ~90% web/mobile development   |
+| **Total Skills**    | 61                            |
+| **Total Workflows** | 19                            |
+| **Total Scripts**   | 5 (master) + skill-level      |
+| **Coverage**        | ~95% web/mobile development   |
 
 ---
 
