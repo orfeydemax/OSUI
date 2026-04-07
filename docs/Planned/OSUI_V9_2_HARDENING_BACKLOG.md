@@ -68,18 +68,18 @@ blocked_by: null
 note: "CHANGELOG format = human-semantic. Risk: автогенерация может давать generic entries."
 ```
 
-### B-5: Track Approval STOP — live test (post W-11)
+### B-5: Track Approval STOP — post-close validation (W-11 closed)
 
 ```yaml
-source: W-11 (closed, but not live-tested)
-priority: medium
-type: process
-status: open
-description: "⛔ STOP gate в route.md patched, но ни один change после patch не тестировал его. Оба pilot нарушили gate до patch."
-acceptance: "Первый CHG после миграции использует route.md → AI останавливается на STOP → ждёт ответ человека"
+source: W-11 (closed via route.md patch)
+priority: low
+type: monitor
+status: monitor
+description: "⛔ STOP gate в route.md patched и закрыт. Валидация произойдёт автоматически при первом реальном CHG после миграции: AI должен остановиться на STOP → ждать ответ человека."
+acceptance: "Первый CHG после миграции подтверждает, что AI останавливается на STOP gate"
 track_estimate: Nano
 blocked_by: null
-note: "Автоматически проверится при первом реальном CHG"
+note: "Не требует отдельного CHG. Проверится при первом рабочем использовании V9.1 контура."
 ```
 
 ---
