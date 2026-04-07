@@ -3,24 +3,32 @@
 # Обновляется при добавлении/удалении скриптов/инструментов.
 
 last_updated: "2026-04-08"
+updated_by: "Phase 6 — ACT: HARDEN"
 
 capabilities:
 
   capture_baseline:
-    status: "partial"
+    status: "working"
     description: "Фиксация текущего состояния системы перед изменением"
-    implementation: "PRODUCT_SURFACE_STATE.yaml + PROJECT_BRAIN.yaml"
-    gaps:
-      - "Нет автоматического скрипта snapshot"
-      - "Зависит от ручного обновления YAML"
+    implementation: ".agent/scripts/capture_baseline.py"
+    what_it_does:
+      - "Копирует PRODUCT_SURFACE_STATE.yaml, HARNESS_CAPABILITIES.yaml, PROJECT_BRAIN.yaml"
+      - "Фиксирует git commit hash"
+      - "Создаёт baseline_manifest.json в .tmp/baselines/{change_id}/"
+    tested: true
+    gaps: []
 
   replay_protected_flow:
-    status: "not_implemented"
-    description: "Прогон ключевых пользовательских потоков для проверки регрессий"
-    implementation: null
+    status: "partial"
+    description: "Проигрывание protected behavior contract"
+    implementation: ".agent/scripts/replay_protected_flow.py"
+    what_it_does:
+      - "Парсит protected_behavior_contract.md"
+      - "Генерирует structured JSON checklist для manual verification"
     gaps:
-      - "Нет E2E тестов (это фреймворк, не приложение)"
-      - "playwright_runner.py существует но требует target app"
+      - "Автоматический replay (E2E / Playwright) требует target app"
+      - "Текущая реализация = manual checklist generator, не автоматический тест"
+    blocked_by: "Отсутствие target application с running dev server"
 
   run_targeted_verify:
     status: "partial"
@@ -31,24 +39,34 @@ capabilities:
       - "Требуют target project с package.json"
 
   collect_surface_diff:
-    status: "not_implemented"
-    description: "Сбор diff поверхности системы до/после изменения"
-    implementation: null
-    gaps:
-      - "Нет скрипта для сравнения PRODUCT_SURFACE_STATE.yaml"
+    status: "working"
+    description: "Сбор before/after diff по surface state"
+    implementation: ".agent/scripts/collect_surface_diff.py"
+    what_it_does:
+      - "Сравнивает baseline snapshot с текущим состоянием registry-файлов"
+      - "Показывает line-level diff: added, removed, unchanged"
+      - "Требует предварительный capture_baseline.py"
+    tested: true
+    gaps: []
 
   validate_registry_freshness:
-    status: "not_implemented"
+    status: "working"
     description: "Проверка актуальности всех реестров"
-    implementation: null
-    gaps:
-      - "Нет автоматической валидации last_updated полей"
-      - "Нет проверки соответствия CHANGELOG ↔ Done/"
+    implementation: ".agent/scripts/check_registry_freshness.py"
+    what_it_does:
+      - "Проверяет 5 registry-файлов на freshness (last_updated, file age)"
+      - "Поддерживает --strict режим (fail on any stale)"
+      - "W-8b fix: --check-surfaces для suspicious no_change detection"
+    tested: true
+    gaps: []
 
   emit_release_trace:
-    status: "partial"
-    description: "Генерация трассы релиза (git tag + CHANGELOG + change_card)"
-    implementation: "release.md workflow steps 9-9.7"
-    gaps:
-      - "Git protocol описан но не тестировался end-to-end"
-      - "PROJECT_BRAIN.yaml update в release — создан, но не прогонялся"
+    status: "working"
+    description: "Генерация structured release trace"
+    implementation: ".agent/scripts/emit_release_trace.py"
+    what_it_does:
+      - "Создаёт JSON trace: chg_id, git commit/tag, verdict, perimeter, memory sync"
+      - "Привязывает baseline_ref из capture_baseline.py"
+      - "Сохраняет в .tmp/traces/{change_id}_release_trace.json"
+    tested: true
+    gaps: []

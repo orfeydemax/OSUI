@@ -19,8 +19,11 @@ import argparse
 import json
 import re
 import os
+import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 
 ROOT = Path(__file__).resolve().parent.parent.parent

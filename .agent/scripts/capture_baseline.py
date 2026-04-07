@@ -21,8 +21,11 @@ import os
 import shutil
 import subprocess
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 
 ROOT = Path(__file__).resolve().parent.parent.parent  # project root
