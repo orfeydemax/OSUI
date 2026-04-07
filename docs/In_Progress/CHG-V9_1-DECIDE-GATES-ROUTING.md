@@ -61,6 +61,17 @@
 | `manual_first_required: true` допускается как valid output Agent Legibility Check | Для некоторых changes human verification первична | **accepted** | Постоянный |
 | `capture_baseline: partial` допускается для Core track (но не ниже) | YAML-файлы есть, скрипт отсутствует | **accepted / deferred** | Phase 6 |
 
+### Формальные waivers
+
+| Поле | W-5 |
+|------|-----|
+| **id** | W-5 |
+| **weakness** | `agent_fit: low` не имеет явного routing consequence. Step 0c выдаёт значение и записывает в Routing Decision Record, но нет правила «agent_fit: low → auto-escalate» |
+| **reason accepted** | Значение `agent_fit` доходит до человека через Routing Decision Record и Human Gate: Track Approval (Step 8). AI не принимает решений по рискам — human gate решает. Это соответствует V8 §13. |
+| **owner** | Human (Track Approval Gate) |
+| **review phase** | Phase 6 (HARDEN) — если появятся данные о частых ошибках при `agent_fit: low`, добавить auto-escalation rule |
+| **closure condition** | Либо: (a) добавить правило «agent_fit: low → escalate Extended+» в route.md Step 0c, либо: (b) формально подтвердить, что human gate достаточен, и перевести W-5 в `closed by design` |
+
 ---
 
 ## 5. Что НЕ тронуто (scope discipline)
