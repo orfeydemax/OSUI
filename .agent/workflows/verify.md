@@ -77,6 +77,8 @@ For brownfield `/enhance` changes:
 - [ ] Delta between before/after matches declared scope
 - [ ] No undeclared changes detected
 
+**If before/after evidence incomplete for brownfield enhance → verdict cannot be `pass`, only `pass_with_waiver`.**
+
 For new features (`/create`):
 - Before/after evidence not required (no prior state)
 
@@ -87,6 +89,8 @@ Check: was the verification performed with sufficient harness?
 - [ ] If `replay_protected_flow: no` → manual verification was performed instead
 - [ ] If `run_targeted_verify: no` → alternative evidence collected
 - `harness_sufficient: true | false`
+
+**If `harness_sufficient: false` AND no alternative evidence was collected → verdict = `fail_harness_insufficient`. Return to human for decision.**
 
 ### 7. Evidence Requirements (§28.2)
 Evidence must be:
@@ -115,7 +119,12 @@ Do not mix:
 **Rules:**
 - `pass` REQUIRES `protected_perimeter_status: intact` or `not_applicable`
 - `pass` REQUIRES `removal_verified: true` or `not_applicable`
-- `pass_with_waiver` REQUIRES explicit waiver reason documented
+- `pass` REQUIRES complete before/after evidence (for brownfield enhance)
+- `pass_with_waiver` REQUIRES a waiver record with:
+  - `waiver_reason`: what limitation exists
+  - `waiver_owner`: who owns the risk
+  - `waiver_approved_by`: human approval reference (name or gate ID)
+  - `waiver_closure_condition`: when/how this waiver can be closed
 - `fail_harness_insufficient` REQUIRES list of missing capabilities
 
 ### 10. Update Change Card
