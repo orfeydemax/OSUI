@@ -84,6 +84,10 @@ Clay → Clarification → Plan → Framing → Route → Build → Verify → R
 - ❌ **`Release → Done` без Git тега (если Git инициализирован)** — ДОБАВЛЕНО v8.0.3
 - ❌ **`/create` нового проекта без создания Supabase-схемы (если проект использует БД)** — ДОБАВЛЕНО v8.0.4
 - ❌ **`Route → Build` без ЯВНОГО текстового подтверждения человека** — ДОБАВЛЕНО v8.0.6. ИИ ОБЯЗАН остановиться после `/route`, показать Track + Scope + Risk и дождаться слов типа "одобряю"/"давай"/"go"/"да". Фразы "делай всё по порядку" или "продолжай" НЕ являются одобрением Track Approval Gate. См. `directives/human-gate-enforcement.md`.
+- ❌ **Brownfield `/enhance` без pre-routing gates (Step 0)** — ДОБАВЛЕНО v9.1. Harness Capability Check, Baseline Confidence Check, Agent Legibility Check обязательны до track selection.
+- ❌ **Removal change на Nano/Core track** — ДОБАВЛЕНО v9.1. Удаление существующего поведения требует Extended+ minimum.
+- ❌ **`/enhance` без `protected_behavior_contract.md` для затронутой shared UI поверхности** — ДОБАВЛЕНО v9.1.
+- ❌ **Verify pass без проверки protected perimeter** — ДОБАВЛЕНО v9.1. Нельзя объявлять verify pass, не проверив сохранность protected behaviors.
 
 ---
 
@@ -165,6 +169,14 @@ These gates require human approval — AI cannot close them:
 
 ### AI Evidence Log Required When:
 AI materially participated in framing, routing reasoning, code generation, migration design, verification design, release readiness, or contradiction resolution.
+
+### V9.1 Brownfield Safeguards
+
+**Жёсткие запреты для brownfield `/enhance`:**
+- ❌ Нельзя стартовать brownfield `/enhance` только по `PROJECT_BRAIN.yaml` и target file — обязательно прочитать `PRODUCT_SURFACE_STATE.yaml` и проверить `HARNESS_CAPABILITIES.yaml`
+- ❌ Нельзя считать `docs/CHANGELOG.md` полной памятью сайта — CHANGELOG = завершённые CHG, не реальная история. Для реальной истории → `docs/00_Registry/SITE_HISTORY_LOG.md`
+- ❌ Нельзя ставить verify pass без проверки protected perimeter — если `protected_behavior_contract.md` существует, каждое protected behavior должно быть перепроверено
+- ❌ Нельзя молча удалять соседнее поведение — любое удаление требует `removal_delta.md` и эскалации до Extended+
 
 ---
 
