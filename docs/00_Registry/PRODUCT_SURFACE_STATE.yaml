@@ -4,7 +4,7 @@
 
 product_name: "V9 OSUI"
 last_updated: "2026-04-08"
-surface_version: "9.1.0-alpha"
+surface_version: "9.1.0-beta"
 
 # Существующие поверхности системы
 surfaces:
@@ -21,14 +21,14 @@ surfaces:
         description: "Реестр завершённых CHG — шаблон без записей"
       - name: "context-loading-rules.md"
         status: "active"
-        description: "Правила Hot/Warm/Cold загрузки контекста"
+        description: "Правила Hot/Warm/Warm-Enhance/Cold загрузки контекста (V9.1)"
       - name: "_templates/"
         status: "active"
         description: "24 шаблона (19 V8 + 5 V9.1 baseline)"
         count: 24
       - name: "00_Registry/"
-        status: "active_partial"
-        description: "9 реестров (6 пустых V8 + 3 новых V9.1)"
+        status: "active"
+        description: "9 реестров (6 V8 + 3 V9.1: PRODUCT_SURFACE_STATE, SITE_HISTORY_LOG, HARNESS_CAPABILITIES)"
         count: 9
 
   machine_layer:
@@ -40,7 +40,11 @@ surfaces:
         description: "Полная архитектура системы"
       - name: "rules/GEMINI.md"
         status: "active"
-        description: "AI behavior rules, P0 priority"
+        description: "V9.1 Operating Standard — 6661 bytes, compressed. P0 priority."
+      - name: "rules/"
+        status: "active"
+        description: "4 rule files: GEMINI.md, SANDBOX_FIRST.md, server-access.md, architecture-reference.md, supabase-schema-protocol.md"
+        count: 5
       - name: "agents/"
         status: "active"
         count: 20
@@ -51,9 +55,9 @@ surfaces:
         status: "active"
         count: 19
       - name: "scripts/"
-        status: "active_untested"
-        description: "5 validation scripts (не запускались в текущем контексте)"
-        count: 5
+        status: "active"
+        description: "10 scripts: 4 working+tested (capture_baseline, check_registry_freshness, emit_release_trace, collect_surface_diff), 1 partial (replay_protected_flow), 5 legacy untested (checklist, verify_all, session_manager, auto_preview, supabase_schema_init)"
+        count: 10
 
   root_files:
     status: "active"
@@ -63,22 +67,27 @@ surfaces:
         description: "Hot Load контекст проекта"
       - name: "AGENTS.md"
         status: "active"
-        description: "Навигационный справочник агентов"
+        description: "Навигационный справочник агентов (V9.1)"
       - name: ".gitignore"
         status: "active"
-        description: "Git exclusion rules"
+        description: "Git exclusion rules (.tmp/, .env, node_modules, etc.)"
 
 # Текущие gaps
 known_gaps:
-  - "CHANGELOG.md содержит только шаблон формата, нет записей"
-  - "6 реестров V8 в 00_Registry/ пустые"
-  - "Verification scripts не тестировались"
-  - "docs/Done/ пустой — ни одного завершённого CHG"
+  - "CHANGELOG.md содержит только шаблон формата, нет завершённых CHG"
+  - "6 реестров V8 в 00_Registry/ пустые (используются при /create конкретных проектов)"
+  - "docs/Done/ пустой — ни одного завершённого CHG (текущие CHG в docs/In_Progress/)"
+  - "5 legacy scripts (checklist.py, verify_all.py, session_manager.py, auto_preview.py, supabase_schema_init.py) не тестировались"
+  - "replay_protected_flow.py = partial (manual checklist, no E2E replay)"
 
-# Защищённые поведения (не менять без Critical Track)
+# Защищённые поведения (не менять без Extended+ Track)
 protected_behaviors:
-  - "10 Forbidden Transitions в GEMINI.md §9.3"
+  - "16 Forbidden Transitions в GEMINI.md §2 (включая V9.1 brownfield safeguards)"
   - "8 Human Gates в GEMINI.md §5"
-  - "Token Budget Guard — Done/ сканирование запрещено"
-  - "Agent announcement protocol"
-  - "Frame обязателен для всех треков"
+  - "4 V9.1 Brownfield Safeguards в GEMINI.md §6"
+  - "Token Budget Guard — docs/Done/ сканирование запрещено"
+  - "Agent announcement protocol (4-step checklist)"
+  - "Frame обязателен для всех треков (except Hotfix)"
+  - "SANDBOX_FIRST — P0 rule для изолированного выполнения"
+  - "Memory Sync Check в release.md (4 registry файла)"
+  - "Protected perimeter verification в verify.md"

@@ -26,6 +26,12 @@
 **Последствия:** Установлен формат для фиксации инцидентов и внешних событий
 **Артефакты:** `docs/In_Progress/CHG-V9_1-OBSERVE-REPO-AUDIT.md`
 
+### 2026-04-08 | Pilot Change | Info
+**Событие:** CHG-V9_1-PILOT — первый brownfield change по V9.1 контуру
+**Причина:** Phase 7 — пилотная проверка нового контура (route → enhance → verify → release)
+**Последствия:** PRODUCT_SURFACE_STATE.yaml обновлён (scripts 5→10, protected behaviors 5→9, version alpha→beta)
+**Артефакты:** `docs/In_Progress/CHG-V9_1-PILOT/` (change_card, reality snapshot, contract, verify evidence)
+
 ---
 
 > **Правило:** CHANGELOG ≠ SITE_HISTORY_LOG.

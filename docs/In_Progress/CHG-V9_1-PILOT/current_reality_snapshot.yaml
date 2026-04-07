@@ -1,0 +1,42 @@
+# Current Reality Snapshot — CHG-V9_1-PILOT
+
+```yaml
+change_id: CHG-V9_1-PILOT
+captured_at: 2026-04-08
+baseline_git_commit: c487fac
+
+target_surface: docs/00_Registry/PRODUCT_SURFACE_STATE.yaml
+
+current_state:
+  file_exists: true
+  file_size: 3014 bytes
+  last_updated: "2026-04-08"
+  
+  content_audit:
+    surfaces_count: 3 (human_layer, machine_layer, root_files)
+    scripts_count_declared: 5
+    scripts_count_actual: 10
+    scripts_status_declared: "active_untested"
+    scripts_status_actual: "4 working (tested), 1 partial, 5 legacy (untested)"
+    templates_count: 24
+    gemini_description: "AI behavior rules, P0 priority"
+    gemini_actual: "V9.1 Operating Standard, 6661 bytes, compressed"
+    protected_behaviors_count: 5
+    protected_behaviors_actual: "16 Forbidden Transitions + 8 Human Gates + 4 Brownfield Safeguards"
+    known_gaps_count: 4
+    known_gaps_accurate: 2 of 4 (scripts tested = no longer gap, W-7/W-8b closed)
+
+  drift_detected:
+    - "scripts count: 5 declared vs 10 actual"
+    - "scripts status: 'active_untested' vs '4 working + 1 partial'"
+    - "protected_behaviors: outdated list (5 items vs 16+ actual)"
+    - "known_gaps: 2 items no longer valid after Phase 6"
+    - "GEMINI.md description outdated (no mention of V9.1, compression)"
+
+neighboring_surfaces:
+  - HARNESS_CAPABILITIES.yaml: updated in Phase 6
+  - PROJECT_BRAIN.yaml: matches current state
+  - AGENTS.md: matches current state
+
+assessment: "PRODUCT_SURFACE_STATE.yaml contains stale data. Drift is non-critical (no broken behavior) but violates release memory sync rule."
+```
