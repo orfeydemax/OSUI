@@ -4,8 +4,8 @@
 
 project_name: "V9 OSUI — Operating System for Change Management"
 current_version: "9.1.0-alpha"
-current_prod_version: null  # нет production-деплоя, это фреймворк
-current_prod_commit_or_tag: null
+current_prod_version: null  # OSUI — фреймворк, не приложение с prod-деплоем
+baseline_repo_commit: "6cdc0f0"  # Step 2.5 quality gate commit
 last_verified_baseline_at: "2026-04-08"
 last_verified_baseline_source: "docs/In_Progress/CHG-V9_1-OBSERVE-REPO-AUDIT.md"
 

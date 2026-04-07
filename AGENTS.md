@@ -35,6 +35,16 @@
 | Pentest | `penetration-tester` | red-team-tactics |
 | E2E автоматизация | `qa-automation-engineer` | webapp-testing |
 
+## Навигация по ключевым документам
+
+| Что искать | Где читать |
+|-----------|-----------|
+| Baseline existing system | `docs/00_Registry/PRODUCT_SURFACE_STATE.yaml` |
+| Protected behavior | `PROJECT_BRAIN.yaml` → `protected_capabilities` |
+| Routing rules | `.agent/workflows/route.md` |
+| Verify rules | `.agent/workflows/verify.md` |
+| Release rules | `.agent/workflows/release.md` |
+
 ## Правила
 
 - НЕ читать все файлы агентов «на всякий случай»
