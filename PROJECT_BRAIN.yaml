@@ -3,11 +3,11 @@
 # Правило: ≤100 строк, ≤1500 токенов.
 
 project_name: "V9 OSUI — Operating System for Change Management"
-current_version: "9.1.0-alpha"
+current_version: "9.1.0-beta"  # migration_partially_hardened
 current_prod_version: null  # OSUI — фреймворк, не приложение с prod-деплоем
-baseline_repo_commit: "6cdc0f0"  # Step 2.5 quality gate commit
+baseline_repo_commit: "55484c8"  # Phase 8 acceptance commit
 last_verified_baseline_at: "2026-04-08"
-last_verified_baseline_source: "docs/In_Progress/CHG-V9_1-OBSERVE-REPO-AUDIT.md"
+last_verified_baseline_source: "docs/Done/OSUI_V9_1_Migration/08_PHASE_8_FINAL_ACCEPTANCE.md"
 
 # Стек
 stack:
@@ -32,8 +32,9 @@ architecture:
     - "Lifecycle: Clay → Plan → Frame → Route → Build → Verify → Release → Done"
     - "Track System: Nano / Core / Extended / Critical / Hotfix"
     - "Human Gates: 8 mandatory approval points"
-    - "Context Budget: Hot / Warm / Cold (§23)"
+    - "Context Budget: Hot / Warm / Warm-Enhance / Cold (§23 V9.1)"
     - "Git Protocol: branch → commit → tag (§12)"
+    - "Brownfield Safeguards: 4 V9.1 checks (§6)"
 
 # Ключевые пользовательские потоки
 key_user_flows:
@@ -45,11 +46,13 @@ key_user_flows:
 
 # Защищённые поведения (не ломать при enhance)
 protected_capabilities:
-  - "Forbidden Transitions (§9.3) — 10 запретов"
-  - "Human Gates — AI не может закрывать"
+  - "16 Forbidden Transitions (GEMINI.md §2) — включая V9.1 brownfield safeguards"
+  - "8 Human Gates — AI не может закрывать"
   - "Token Budget Guard — Done/ никогда не сканировать целиком"
-  - "Agent announcement — обязательно до кода"
+  - "Agent announcement — обязательно до кода (4-step checklist)"
   - "Frame обязателен для всех треков"
+  - "SANDBOX_FIRST — P0 isolated execution"
+  - "Track Approval STOP gate (route.md)"
 
 # Активные UI-surface (для этого проекта = docs/templates/workflows)
 active_ui_surfaces:
@@ -68,23 +71,24 @@ known_couplings:
 # Активные риски
 active_risks:
   - "CHANGELOG.md пустой — Warm Load не даёт истории"
-  - "Registries все пустые — нет исторических решений"
-  - "ARCHITECTURE.md числа не соответствовали факту (исправлено Phase 2)"
+  - "Automation layer partial — 4/10 scripts working (see HARNESS_CAPABILITIES.yaml)"
+  - "Verify = checklist + ad-hoc, не full assertion mode (W-13)"
 
 # Решения
 decisions:
   - id: "ADR-001"
     date: "2026-04-08"
     title: "Миграция V8→V9.1 через OODA-фазы"
-    status: "in_progress"
+    status: "completed"
 
 # Активные изменения
-active_changes:
-  - id: "CHG-V9_1-Migration"
-    stage: "Phase 2 — ORIENT (quality gate)"
-    track: "Critical"
+active_changes: []  # No active CHG
 
-completed_changes: []
+completed_changes:
+  - id: "CHG-V9_1-Migration"
+    stage: "Phase 8 — Final Acceptance"
+    verdict: "migration_partially_hardened"
+    completed_at: "2026-04-08"
 
 # Документы Source of Truth
 source_of_truth_docs:

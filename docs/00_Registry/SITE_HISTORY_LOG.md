@@ -38,6 +38,12 @@
 **Последствия:** emit_release_trace.py расширен: новое поле changelog_check в JSON, warning при stale CHANGELOG
 **Артефакты:** `docs/In_Progress/CHG-V9_1-PILOT-2/`, `.tmp/traces/CHG-V9_1-PILOT-2_release_trace.json`
 
+### 2026-04-08 | Migration Closure | Info
+**Событие:** V9.1 Migration accepted as `migration_partially_hardened`. Phases 1–8 завершены.
+**Причина:** Phase 8 Final Acceptance — 28/28 criteria pass. 9 known waivers (0 blockers).
+**Последствия:** Migration folder → `docs/Done/OSUI_V9_1_Migration/`. Backlog → `docs/Planned/OSUI_V9_2_HARDENING_BACKLOG.md`. Version → 9.1.0-beta. Git tag: `osui-v9.1-partially-hardened`.
+**Артефакты:** `docs/Done/OSUI_V9_1_Migration/08_PHASE_8_FINAL_ACCEPTANCE.md`
+
 ---
 
 > **Правило:** CHANGELOG ≠ SITE_HISTORY_LOG.
