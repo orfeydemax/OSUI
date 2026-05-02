@@ -31,7 +31,7 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container navbar__inner">
           <Link to="/" className="navbar__logo">
-            Victor <span>DivePro</span>
+            <img src="/images/logo.jpg" alt="Victor DivePro" className="navbar__logo-img" />
           </Link>
           <div className="navbar__links">
             {links.map(l => (

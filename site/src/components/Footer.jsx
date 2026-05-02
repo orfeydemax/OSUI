@@ -7,7 +7,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer__inner">
           <div>
-            <div className="footer__brand">Victor <span>DivePro</span></div>
+            <div className="footer__brand">
+              <img src="/images/logo.jpg" alt="Victor DivePro" style={{ height: '56px', borderRadius: '8px' }} />
+            </div>
             <p className="footer__desc">
               Персональный дайвинг и снорклинг в Нячанге с русскоговорящим инструктором.
               Для новичков, пар, семей и опытных дайверов.

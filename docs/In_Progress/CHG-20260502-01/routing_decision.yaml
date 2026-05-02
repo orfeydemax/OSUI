@@ -1,0 +1,17 @@
+selected_track: "core"
+routing_score: 2
+routing_score_reasoning: "Затрагивает несколько компонентов UI (Navbar и др.) для применения новых стилей, без изменения бизнес-логики, архитектуры базы данных или состояний. (Оценка: Multiple layers touched = +2)"
+forced_escalation_reason: ""
+required_artifacts: 
+  - "change_card.yaml"
+  - "routing_decision.yaml"
+  - "verification_checklist.md"
+forbidden_shortcuts:
+  - "Нельзя менять маршрутизацию (React Router) без эскалации"
+  - "Нельзя удалять существующие кнопки связи без эскалации"
+approved: false
+approved_by: ""
+approved_at: ""
+harness_check_result: "partial (harness_gap: true)"
+baseline_confidence: "missing (PRODUCT_SURFACE_STATE описывает OSUI, а не целевой сайт)"
+agent_fit: "high"

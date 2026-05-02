@@ -1,0 +1,51 @@
+id: "CHG-20260502-01"
+title: "Косметический редизайн сайта Victor DivePro"
+stage: "build"
+track: "core"
+change_type: "enhancement"
+
+human_owner: "MAX"
+routing_owner: "AI"
+implementer: ""
+approver: "MAX"
+ai_operator: "Antigravity"
+
+summary: "Косметический редизайн сайта в стиле liquid glass / premium (изменение CSS, добавление анимаций), без изменения бизнес-логики и роутинга."
+problem_statement: "Текущий дизайн не соответствует премиальным стандартам или требует визуального обновления для повышения конверсии."
+expected_outcome: "Сайт выглядит современно, премиально, использует современные UI/UX паттерны, работает быстро и адаптивно."
+failure_definition: "Дизайн ломается на мобильных устройствах, нарушена читаемость текста, не работают кнопки."
+what_must_not_break: "Существующий контент, навигация, SEO-теги, формы связи, мобильная адаптивность."
+
+touched_entities: ["UI Components", "CSS/Tailwind"]
+touched_roles: []
+touched_interfaces: ["Site Frontend"]
+touched_data: []
+touched_services: []
+touched_modules: ["Navbar", "Pages", "index.css"]
+
+history_risk: "none"
+client_risk: "low"
+business_risk: "none"
+production_risk: "low"
+
+routing_score: 2
+routing_score_reasoning: "Затрагивает несколько компонентов UI (Multiple layers touched = +2), без изменения архитектуры."
+forced_escalation_reason: ""
+nano_eligibility: false
+
+ai_mode: "ai_assisted"
+ai_evidence_log_required: false
+
+gates:
+  problem_definition: "approved"
+  brief_origin: "approved"
+  business_priority: "approved"
+  contradiction_resolution: "approved"
+  track_approval: "approved"
+  verification_go: "not_started"
+  release_approval: "not_started"
+  rollback_restore_decision: "not_started"
+
+next_action: "Implement redesign"
+source_of_truth: docs/In_Progress/CHG-20260502-01/change_card.yaml
+updated_at: "2026-05-02T10:03:00Z"
