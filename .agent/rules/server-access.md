@@ -8,7 +8,7 @@
 - VPS: `116.118.9.78`
 - Пользователь: `deploy`
 - SSH ключ: `C:\Users\max\.ssh\openclaw_vps`
-- Sudo пароль deploy: `230281Maxut!`
+- Sudo пароль deploy: [ПАРОЛЬ ЗАПРАШИВАЕТСЯ У ВЛАДЕЛЬЦА]
 - Root прямой вход запрещён (`PermitRootLogin no`)
 
 ## Протокол подключения
