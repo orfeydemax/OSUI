@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { tgLink, waLink, trackEvent } from '../utils';
 import FaqSection from '../components/FaqSection';
 import CtaFinal from '../components/CtaFinal';
@@ -8,12 +7,10 @@ const faqItems = [
   { q: 'Можно ли нырять, если я не умею плавать?', a: 'Да, для пробного погружения это не обязательно. Инструктор рядом и контролирует процесс. Перед погружением вы проходите инструктаж и учитесь дышать через регулятор.' },
   { q: 'Нужен ли опыт?', a: 'Нет. Пробное погружение рассчитано на новичков без сертификата.' },
   { q: 'Что если я испугаюсь?', a: 'Никто не будет давить. Инструктор помогает адаптироваться постепенно. Если человеку нужно больше времени, темп подстраивается под него.' },
-  { q: 'Фото и видео входят?', a: 'Съёмка оплачивается отдельно. Её можно обсудить заранее.' },
+  { q: 'Фото и видео входят?', a: 'Фото и видео — отдельная доп-услуга. На сайте мы не продаём её как обязательную часть программы: менеджер подскажет варианты в переписке.' },
   { q: 'Когда лучший сезон?', a: 'Высокий сезон: март — октябрь. Зимой возможны ограничения по погоде и видимости.' },
   { q: 'Как забронировать?', a: 'Напишите в Telegram или WhatsApp. Мы уточним дату, количество человек, опыт и подберём формат.' },
 ];
-
-const proofItems = ['11 лет опыта', '15 600+ клиентов', 'SSI инструктор', '2 клиента на 1 инструктора'];
 
 const painPoints = [
   'вы ни разу не погружались',
@@ -28,7 +25,7 @@ const programs = [
   {
     price: '95$',
     title: 'Дайвинг для новичков',
-    desc: '2 погружения, русский инструктаж, сопровождение рядом на каждом этапе.',
+    desc: 'Первое погружение без сертификата: 2 погружения по 35-40 минут, глубина до 12 метров, инструктаж на русском.',
     image: '/images/generated/beginner-dive.svg',
     imageAlt: 'Новичок под водой с инструктором',
     cta: 'Хочу первое погружение',
@@ -38,7 +35,7 @@ const programs = [
   {
     price: '45$',
     title: 'Снорклинг',
-    desc: 'Лодка, море, маска и подводный мир без акваланга и глубины.',
+    desc: 'Для тех, кто хочет море, лодку и подводный мир без акваланга. Хорошо для семей и тех, кто едет за компанию.',
     image: '/images/generated/snorkeling.svg',
     imageAlt: 'Снорклинг в тропическом море',
     cta: 'Хочу снорклинг',
@@ -46,40 +43,49 @@ const programs = [
     event: 'ClickSnorkeling',
   },
   {
-    price: '410$',
-    title: 'Open Water Diver',
-    desc: 'Обучение для тех, кто хочет нырять самостоятельно и получить сертификат.',
-    image: '/images/generated/dive-course.svg',
-    imageAlt: 'Обучение дайвингу',
-    cta: 'Узнать про обучение',
-    key: 'course',
-    event: 'ClickCourses',
+    price: 'по запросу',
+    title: 'Дайвинг для пары',
+    desc: 'Свидание, подарок, день рождения или красивый приватный формат для двоих.',
+    image: '/images/generated/couples-dive.svg',
+    imageAlt: 'Дайвинг для пары',
+    cta: 'Обсудить для двоих',
+    key: 'couple',
+    event: 'ClickCouples',
   },
   {
-    price: 'Private',
-    title: 'Пары и семьи',
-    desc: 'Спокойный формат для подарка, дня рождения, годовщины или поездки с детьми.',
+    price: 'по запросу',
+    title: 'Предложение под водой',
+    desc: 'Поможем обсудить спокойный сценарий предложения руки и сердца под водой в Нячанге.',
     image: '/images/generated/couples-dive.svg',
-    imageAlt: 'Пара под водой',
-    cta: 'Обсудить формат',
-    key: 'private',
-    event: 'ClickPrivate',
+    imageAlt: 'Предложение руки и сердца под водой',
+    cta: 'Обсудить предложение',
+    key: 'proposal',
+    event: 'ClickProposal',
   },
 ];
 
 const daySteps = [
-  ['Контакт', 'Вы пишете Виктору в Telegram или WhatsApp. В сообщении уже будет готовая фраза.'],
+  ['Контакт', 'Вы пишете команде Victor DivePro в Telegram или WhatsApp. В сообщении уже будет готовая фраза.'],
   ['Диагностика', 'Уточняем опыт, количество людей, страх воды, умение плавать и желаемый формат.'],
-  ['Маршрут', 'Подбираем дайвинг, снорклинг, private-день, пару, семью или обучение.'],
+  ['Маршрут', 'Подбираем дайвинг, снорклинг, private-день, пару, семью или предложение под водой.'],
   ['Инструктаж', 'На лодке спокойно разбираем дыхание, сигналы, снаряжение и поведение под водой.'],
-  ['Погружение', 'Инструктор рядом. Вы не остаётесь один на один с водой или тревогой.'],
-  ['Эмоции', 'После погружения можно обсудить фото, видео и следующий морской день.'],
+  ['Погружение', 'Сертифицированный инструктор рядом. Вы не остаётесь один на один с водой или тревогой.'],
+  ['Эмоции', 'После погружения можно обсудить впечатления и дополнительные фото/видео в переписке.'],
 ];
 
 const reviews = [
-  { text: 'Боялась воды всю жизнь, но Виктор так спокойно всё объяснил, что я даже не заметила, как оказалась под водой.', author: 'Анна', tag: 'Первое погружение' },
-  { text: 'Дайвинг подарили мужу на день рождения. Виктор организовал всё идеально: погружение, темп и съёмку.', author: 'Екатерина', tag: 'Пара' },
+  { text: 'Боялась воды всю жизнь, но инструктор так спокойно всё объяснил, что я даже не заметила, как оказалась под водой.', author: 'Анна', tag: 'Первое погружение' },
+  { text: 'Дайвинг подарили мужу на день рождения. Команда организовала всё идеально: погружение, темп и формат.', author: 'Екатерина', tag: 'Пара' },
   { text: 'Приехали семьёй: дети на снорклинг, мы с женой на дайвинг. Все довольны, организация на высоте.', author: 'Дмитрий', tag: 'Семья' },
+];
+
+const underwaterProof = [
+  'живые коралловые участки и мягкие рифовые формы',
+  'стайки тропических рыб у рифа',
+  'чистая морская вода и лучи света под поверхностью',
+  'спокойные маршруты для первого погружения',
+  'маска, дыхание и ощущение невесомости — уже само впечатление',
+  'локации подбираются по погоде и видимости',
 ];
 
 export default function HomePage() {
@@ -90,22 +96,37 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero hero--editorial" id="hero">
-        <div className="hero__watermark">NHA TRANG</div>
-        <div className="hero__sonar" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="container hero__grid">
-          <div className="hero__kicker text-meta">Victor DivePro / персональный дайвинг</div>
-          <div className="hero__copy">
-            <h1>Первое погружение без геройства</h1>
-            <p className="hero__sub">
-              Русскоговорящий инструктор Виктор ведёт новичка спокойно: объясняет дыхание,
-              проверяет снаряжение, держит темп и остаётся рядом под водой.
+      <section className="hero hero--culture" id="hero">
+        <div className="culture-hero__stage">
+          <div className="culture-hero__nav" aria-label="Hero navigation context">
+            <a href="/" className="culture-hero__brand" aria-label="Victor DivePro">
+              <img src="/images/logo.jpg" alt="Victor DivePro" />
+              <span>Victor DivePro</span>
+            </a>
+            <div className="culture-hero__links">
+              <a href="#main-program">Дайвинг</a>
+              <a href="#snorkeling">Снорклинг</a>
+              <a href="#programs">Для пары</a>
+              <a href="#underwater">Что увидите</a>
+              <a href="#reviews">Отзывы</a>
+            </div>
+            <a href={tgLink('general')} target="_blank" rel="noopener noreferrer" className="culture-hero__nav-cta">
+              Написать
+            </a>
+          </div>
+
+          <div className="culture-hero__copy">
+            <p className="culture-hero__eyebrow">Нячанг · персональные погружения · команда инструкторов</p>
+            <h1>
+              <span>Дайвинг</span>
+              <span>без</span>
+              <span>суеты</span>
+            </h1>
+            <p className="culture-hero__text">
+              Сертифицированные инструкторы Victor DivePro ведут новичка спокойно:
+              объясняют дыхание, проверяют снаряжение и остаются рядом под водой.
             </p>
-            <div className="btn-group">
+            <div className="culture-hero__actions">
               <a
                 href={tgLink('beginner')}
                 target="_blank"
@@ -113,7 +134,7 @@ export default function HomePage() {
                 className="btn btn--primary"
                 onClick={() => trackEvent('ClickTelegram', { source: 'hero' })}
               >
-                Узнать ближайшие даты
+                Узнать даты
               </a>
               <a
                 href={waLink('general')}
@@ -122,27 +143,16 @@ export default function HomePage() {
                 className="btn btn--outline"
                 onClick={() => trackEvent('ClickWhatsApp', { source: 'hero' })}
               >
-                Написать в WhatsApp
+                WhatsApp
               </a>
             </div>
           </div>
-          <aside className="hero__manifest">
-            <p>Для тех, кто хочет увидеть море изнутри, но не хочет, чтобы его торопили.</p>
-            <img
-              src="/images/generated/beginner-dive.svg"
-              alt="Первое погружение с инструктором"
-              className="hero__visual generated-visual"
-            />
-            <div className="hero__depth">
-              <span>0m</span>
-              <span>6m</span>
-              <span>12m</span>
-            </div>
-          </aside>
-          <div className="hero__proof" aria-label="Ключевые факты">
-            {proofItems.map((item) => (
-              <span key={item} className="hero__proof-item">{item}</span>
-            ))}
+
+          <div className="culture-hero__collage" aria-label="Форматы дайвинга Victor DivePro">
+            <img src="/images/generated/couples-dive.svg" alt="Дайвинг для пары" className="culture-hero__image culture-hero__image--small" />
+            <img src="/images/generated/family-boat.svg" alt="Семейный день на лодке" className="culture-hero__image culture-hero__image--wide" />
+            <img src="/images/generated/beginner-dive.svg" alt="Первое погружение с инструктором" className="culture-hero__image culture-hero__image--main" />
+            <img src="/images/generated/snorkeling.svg" alt="Снорклинг над рифом" className="culture-hero__image culture-hero__image--tall" />
           </div>
         </div>
       </section>
@@ -151,7 +161,7 @@ export default function HomePage() {
         <div className="container split-grid split-grid--wide-left">
           <div>
             <p className="text-meta">Кому подходит</p>
-            <h2>Если внутри есть “хочу”, а рядом с ним “страшно” — вы как раз по адресу</h2>
+            <h2>Если внутри есть “хочу”, а рядом с ним “страшно” — вы по адресу</h2>
           </div>
           <div>
             <p className="lead">
@@ -185,7 +195,7 @@ export default function HomePage() {
             <h2>Пробное погружение для новичков в Нячанге</h2>
             <p className="lead">
               2 погружения по 35-40 минут, инструктаж на русском языке и сопровождение
-              инструктора рядом. Опыт и сертификат не нужны.
+              сертифицированного инструктора рядом. Опыт и сертификат не нужны.
             </p>
             <ul className="feature-lines">
               <li>Глубина до 12 метров, только после адаптации</li>
@@ -210,29 +220,29 @@ export default function HomePage() {
           <div className="portrait-panel">
             <img
               src="/images/generated/victor-portrait.svg"
-              alt="Инструктор Виктор"
+              alt="Инструктор Victor DivePro"
               className="portrait-panel__image generated-visual"
             />
             <div>
               <p className="text-meta">Инструктор рядом</p>
-              <h2>Виктор не торопит. Он проводит через первый страх</h2>
+              <h2>Команда не торопит. Вас проводят через первый страх</h2>
             </div>
           </div>
-          <div>
+          <div className="victor-copy">
             <p className="lead">
-              Для первого погружения важен не только акваланг. Важен человек, которому
-              вы доверите первые минуты под водой. Виктор спокойно объясняет, проверяет
-              состояние и помогает пройти первый опыт без лишнего стресса.
+              Для первого погружения важен не только акваланг. Важен инструктор,
+              которому вы доверите первые минуты под водой. В Victor DivePro работают
+              квалифицированные дайверы с сертификацией и опытом сопровождения новичков.
             </p>
             <div className="about-victor__facts">
               <div className="fact"><div className="fact__num">11</div><div className="fact__label">лет опыта</div></div>
               <div className="fact"><div className="fact__num">15 600+</div><div className="fact__label">клиентов</div></div>
-              <div className="fact"><div className="fact__num">SSI</div><div className="fact__label">сертификат</div></div>
+              <div className="fact"><div className="fact__num">SSI</div><div className="fact__label">сертификация</div></div>
               <div className="fact"><div className="fact__num">2:1</div><div className="fact__label">клиент/инструктор</div></div>
             </div>
-            <Link to="/about-victor" className="btn btn--outline">
-              Подробнее о Викторе
-            </Link>
+            <a href={tgLink('general')} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+              Написать команде
+            </a>
           </div>
         </div>
       </section>
@@ -257,6 +267,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section" id="underwater">
+        <div className="container split-grid">
+          <div>
+            <p className="text-meta">Что смотреть под водой</p>
+            <h2>“Нечего смотреть” — обычно так кажется до первого спуска</h2>
+            <p className="lead">
+              В Нячанге впечатление создаёт не только один большой объект, а весь подводный
+              опыт: риф, рыбы, свет, дыхание и ощущение спокойствия под водой. Локации
+              подбираются по погоде и видимости.
+            </p>
+          </div>
+          <ul className="identify-list">
+            {underwaterProof.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </div>
+      </section>
+
       <section className="section" id="programs">
         <div className="container">
           <div className="section__header">
@@ -264,7 +291,7 @@ export default function HomePage() {
             <h2>Выберите свой морской сценарий</h2>
             <p className="section__subtitle">
               Можно прийти совсем без опыта, поехать за компанию на снорклинг
-              или пройти обучение на международный сертификат.
+              или подготовить особенный формат для пары.
             </p>
           </div>
           <div className="programs-grid">
@@ -285,6 +312,31 @@ export default function HomePage() {
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--sand" id="media-service">
+        <div className="container split-grid">
+          <div>
+            <p className="text-meta">Фото и видео</p>
+            <h2>Съёмка — отдельная доп-услуга, не обязательный пункт программы</h2>
+          </div>
+          <div>
+            <p className="lead">
+              На сайте мы не навязываем фото и видео в пакете. Менеджер подскажет варианты
+              в переписке: кому-то достаточно самого погружения, а кому-то важно сохранить
+              кадры с кораллами, рыбами и первым спокойным дыханием под водой.
+            </p>
+            <a
+              href={tgLink('general')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--outline"
+              onClick={() => trackEvent('ClickTelegram', { source: 'media_service' })}
+            >
+              Обсудить детали
+            </a>
           </div>
         </div>
       </section>
@@ -382,7 +434,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <Link to="/reviews" className="btn btn--outline reviews-link">Все отзывы</Link>
+          <a href="/reviews" className="btn btn--outline reviews-link">Все отзывы</a>
         </div>
       </section>
 

@@ -1,18 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
-  <title id="title">Victor instructor portrait illustration</title>
-  <desc id="desc">A stylized portrait card for a calm diving instructor.</desc>
-  <rect width="900" height="900" rx="36" fill="#F3F1F1"/>
-  <rect x="42" y="42" width="816" height="816" rx="28" fill="#F5F5DC"/>
-  <rect x="42" y="42" width="816" height="230" rx="28" fill="#002147"/>
-  <circle cx="450" cy="372" r="132" fill="#333333"/>
-  <circle cx="450" cy="330" r="92" fill="#F5F5DC"/>
-  <rect x="314" y="474" width="272" height="246" rx="128" fill="#002147"/>
-  <path d="M302 590c-92 46-152 116-180 210" fill="none" stroke="#002147" stroke-width="46" stroke-linecap="round"/>
-  <path d="M598 590c92 46 152 116 180 210" fill="none" stroke="#002147" stroke-width="46" stroke-linecap="round"/>
-  <rect x="342" y="306" width="216" height="52" rx="24" fill="#00CED1"/>
-  <path d="M384 332h132" stroke="#002147" stroke-width="12" stroke-linecap="round"/>
-  <circle cx="386" cy="764" r="28" fill="#00CED1"/>
-  <circle cx="514" cy="764" r="28" fill="#00CED1"/>
-  <text x="78" y="122" fill="#F5F5DC" font-family="Manrope, sans-serif" font-size="34" font-weight="800">VICTOR</text>
-  <text x="78" y="170" fill="#BFD8F8" font-family="Be Vietnam Pro, sans-serif" font-size="22">SSI instructor / calm first dives</text>
+  <title id="title">Diving instructor portrait</title>
+  <desc id="desc">A text-free stylized portrait of a calm diving instructor with mask and marine background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#002147"/>
+      <stop offset=".58" stop-color="#007B86"/>
+      <stop offset="1" stop-color="#00CED1"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".2" r=".65">
+      <stop offset="0" stop-color="#F5F5DC" stop-opacity=".65"/>
+      <stop offset=".55" stop-color="#F5F5DC" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#F5F5DC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="900" rx="48" fill="url(#bg)"/>
+  <rect width="900" height="900" rx="48" fill="url(#halo)"/>
+  <path d="M0 536c124-52 238-45 342 18 122 74 254 74 398 10 62-28 116-38 160-30v366H0Z" fill="#F5F5DC" opacity=".9"/>
+  <path d="M0 292c108 38 214 42 318 8 132-44 248-62 390-8 76 29 140 32 192 12v94c-70 28-150 24-236-8-126-46-236-28-366 14-98 32-198 20-298-24Z" fill="#00CED1" opacity=".72"/>
+  <g transform="translate(250 170)">
+    <circle cx="200" cy="118" r="112" fill="#F5F5DC"/>
+    <path d="M100 130c30 104 68 158 100 158s70-54 100-158c-44 22-156 22-200 0Z" fill="#333333"/>
+    <circle cx="156" cy="116" r="30" fill="#002147"/>
+    <circle cx="244" cy="116" r="30" fill="#002147"/>
+    <path d="M186 116h28" stroke="#002147" stroke-width="12" stroke-linecap="round"/>
+    <path d="M126 116h148" stroke="#00CED1" stroke-width="10" stroke-linecap="round"/>
+    <path d="M200 206v58" stroke="#002147" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(172 420)">
+    <path d="M88 324c16-188 118-298 278-298s262 110 278 298Z" fill="#002147"/>
+    <path d="M156 136c66 54 146 82 240 82s174-28 240-82" fill="none" stroke="#00CED1" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="260" cy="210" r="24" fill="#F5F5DC"/>
+    <circle cx="472" cy="210" r="24" fill="#F5F5DC"/>
+    <path d="M108 326h516" stroke="#333333" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <g fill="#F5F5DC" opacity=".62">
+    <circle cx="132" cy="182" r="7"/>
+    <circle cx="744" cy="190" r="8"/>
+    <circle cx="796" cy="252" r="5"/>
+  </g>
 </svg>

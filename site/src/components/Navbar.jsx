@@ -20,15 +20,15 @@ export default function Navbar() {
     { to: '/', label: 'Главная' },
     { to: '/beginner-diving-nha-trang', label: 'Дайвинг' },
     { to: '/snorkeling-nha-trang', label: 'Снорклинг' },
-    { to: '/diving-courses-nha-trang', label: 'Обучение' },
-    { to: '/about-victor', label: 'О Викторе' },
+    { to: '/diving-for-couples-nha-trang', label: 'Для пары' },
+    { to: '/family-diving-snorkeling-nha-trang', label: 'Для семьи' },
     { to: '/reviews', label: 'Отзывы' },
     { to: '/contacts', label: 'Контакты' },
   ];
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${location.pathname === '/' ? 'navbar--home' : ''}`}>
         <div className="container navbar__inner">
           <Link to="/" className="navbar__logo">
             <img src="/images/logo.jpg" alt="Victor DivePro" className="navbar__logo-img" />

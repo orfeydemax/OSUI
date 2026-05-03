@@ -1,33 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Family boat illustration</title>
-  <desc id="desc">A family day on a dive boat in a stylized marine UI-kit scene.</desc>
+  <title id="title">Family boat day with snorkeling</title>
+  <desc id="desc">A text-free marine scene with a family on a dive boat, calm water, and snorkeling gear.</desc>
   <defs>
-    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="3" cy="3" r="1.6" fill="#F5F5DC" opacity=".26"/>
-    </pattern>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F5F5DC"/>
+      <stop offset=".55" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#BFF9FA"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#002147"/>
+      <stop offset=".55" stop-color="#008C96"/>
+      <stop offset="1" stop-color="#00CED1"/>
+    </linearGradient>
   </defs>
-  <rect width="1200" height="760" rx="36" fill="#202222"/>
-  <rect width="1200" height="760" fill="url(#dots)"/>
-  <rect x="54" y="54" width="1092" height="652" rx="28" fill="#F3F1F1"/>
-  <rect x="88" y="88" width="280" height="560" rx="22" fill="#F5F5DC"/>
-  <rect x="408" y="92" width="704" height="186" rx="22" fill="#002147"/>
-  <path d="M408 510c102-54 210-54 324 0s230 54 380 0v128H408Z" fill="#00CED1"/>
-  <path d="M498 410h424l-72 86H566Z" fill="#002147"/>
-  <rect x="590" y="328" width="242" height="82" rx="12" fill="#F5F5DC"/>
-  <path d="M712 328V238" stroke="#333333" stroke-width="14" stroke-linecap="round"/>
-  <path d="M712 248l164 80H712Z" fill="#00CED1"/>
-  <g fill="#333333">
-    <circle cx="630" cy="382" r="22"/>
-    <circle cx="708" cy="382" r="22"/>
-    <circle cx="786" cy="382" r="22"/>
+  <rect width="1200" height="760" rx="44" fill="url(#sky)"/>
+  <path d="M0 438c148-50 286-42 420 24 154 76 314 68 480 4 116-45 214-54 300-26v320H0Z" fill="url(#sea)"/>
+  <path d="M0 510c150 48 292 42 426-18 154-70 300-62 460 4 104 43 208 48 314 10v254H0Z" fill="#00CED1" opacity=".42"/>
+  <g transform="translate(190 268)">
+    <path d="M0 160h760c-36 86-116 140-230 140H150C76 300 28 254 0 160Z" fill="#002147"/>
+    <path d="M112 64h450c86 0 148 36 186 96H54c16-58 36-96 58-96Z" fill="#F5F5DC"/>
+    <path d="M180 22h276c76 0 132 16 168 42H144c8-28 20-42 36-42Z" fill="#FFFFFF"/>
+    <circle cx="264" cy="118" r="28" fill="#002147"/>
+    <circle cx="368" cy="118" r="28" fill="#002147"/>
+    <circle cx="476" cy="118" r="28" fill="#002147"/>
+    <rect x="238" y="148" width="52" height="70" rx="24" fill="#002147"/>
+    <rect x="342" y="148" width="52" height="70" rx="24" fill="#002147"/>
+    <rect x="450" y="148" width="52" height="70" rx="24" fill="#002147"/>
   </g>
-  <g font-family="Manrope, sans-serif" font-weight="800">
-    <text x="120" y="148" fill="#002147" font-size="28">FAMILY DAY</text>
-    <text x="120" y="192" fill="#333333" opacity=".72" font-size="18">boat / snorkel / dive</text>
+  <g transform="translate(760 492)" fill="none" stroke-linecap="round">
+    <path d="M0 86c44-82 96-82 140 0" stroke="#F5F5DC" stroke-width="20"/>
+    <path d="M148 96c36-60 76-60 112 0" stroke="#002147" stroke-width="16"/>
   </g>
-  <g fill="none" stroke-linecap="round" stroke-width="10">
-    <path d="M120 518h162" stroke="#002147"/>
-    <path d="M120 550h204" stroke="#00CED1"/>
-    <path d="M120 582h128" stroke="#333333"/>
+  <g fill="#F5F5DC">
+    <path d="M104 552c42-24 82-24 124 0-42 24-82 24-124 0Z"/>
+    <circle cx="214" cy="552" r="4" fill="#002147"/>
+    <path d="M950 608c36-20 70-20 106 0-36 20-70 20-106 0Z"/>
+    <circle cx="1044" cy="608" r="4" fill="#002147"/>
   </g>
 </svg>

@@ -1,38 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Snorkeling illustration</title>
-  <desc id="desc">A stylized snorkeling surface scene with tropical water and UI-kit panels.</desc>
+  <title id="title">Snorkeling above a reef</title>
+  <desc id="desc">A text-free tropical snorkeling scene with a swimmer, coral reef, fish, and clear water.</desc>
   <defs>
-    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="4" cy="4" r="1.5" fill="#F5F5DC" opacity=".25"/>
-    </pattern>
     <linearGradient id="sea" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#002147"/>
-      <stop offset=".45" stop-color="#007F80"/>
-      <stop offset="1" stop-color="#00CED1"/>
+      <stop offset="0" stop-color="#00CED1"/>
+      <stop offset=".55" stop-color="#008C96"/>
+      <stop offset="1" stop-color="#002147"/>
     </linearGradient>
+    <radialGradient id="sun" cx=".2" cy=".02" r=".9">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".82"/>
+      <stop offset=".44" stop-color="#F5F5DC" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="1200" height="760" rx="36" fill="#202222"/>
-  <rect width="1200" height="760" fill="url(#dots)"/>
-  <rect x="54" y="54" width="1092" height="652" rx="28" fill="#F3F1F1"/>
-  <rect x="88" y="88" width="330" height="238" rx="22" fill="#00CED1"/>
-  <rect x="88" y="326" width="330" height="120" rx="0" fill="#002147"/>
-  <rect x="88" y="446" width="330" height="174" rx="0" fill="#F5F5DC"/>
-  <path d="M476 220c78 44 150 44 228 0s154-44 230 0 136 44 204 8v368H476Z" fill="url(#sea)"/>
-  <path d="M512 300c72 28 140 28 204 0s132-28 196 0 120 30 188 4" fill="none" stroke="#F5F5DC" stroke-width="12" opacity=".72" stroke-linecap="round"/>
-  <g transform="translate(590 352)">
-    <ellipse cx="116" cy="92" rx="108" ry="52" fill="#F5F5DC"/>
-    <circle cx="76" cy="74" r="38" fill="#002147"/>
-    <rect x="41" y="58" width="70" height="34" rx="16" fill="#00CED1"/>
-    <path d="M112 70c58-30 114-20 162 30" fill="none" stroke="#002147" stroke-width="18" stroke-linecap="round"/>
-    <path d="M42 106c-48 10-78 36-90 78" fill="none" stroke="#002147" stroke-width="18" stroke-linecap="round"/>
+  <rect width="1200" height="760" rx="44" fill="url(#sea)"/>
+  <rect width="1200" height="760" rx="44" fill="url(#sun)"/>
+  <path d="M0 180c112 34 218 34 318 0 138-46 252-58 410-2 152 54 314 46 472-12v96c-164 58-326 68-486 14-146-50-252-42-386 4-108 37-216 28-328-14Z" fill="#F5F5DC" opacity=".72"/>
+  <path d="M0 245c126 50 250 58 374 20 160-48 282-74 442-18 126 44 254 42 384-4v90c-136 46-272 48-408 4-144-47-260-28-414 18-126 38-250 24-378-26Z" fill="#FFFFFF" opacity=".22"/>
+  <g transform="translate(350 205)">
+    <path d="M82 96c96-54 226-52 320 8" fill="none" stroke="#002147" stroke-width="34" stroke-linecap="round"/>
+    <ellipse cx="242" cy="88" rx="92" ry="48" fill="#002147"/>
+    <circle cx="164" cy="68" r="42" fill="#002147"/>
+    <circle cx="164" cy="68" r="24" fill="#F5F5DC"/>
+    <path d="M140 68h48" stroke="#00CED1" stroke-width="9" stroke-linecap="round"/>
+    <path d="M196 48c22-62 64-82 128-66" fill="none" stroke="#002147" stroke-width="18" stroke-linecap="round"/>
+    <path d="M396 116c72 34 118 84 140 150" fill="none" stroke="#002147" stroke-width="30" stroke-linecap="round"/>
+    <path d="M90 124c-70 36-118 90-144 162" fill="none" stroke="#002147" stroke-width="30" stroke-linecap="round"/>
   </g>
-  <g font-family="Manrope, sans-serif" font-weight="800">
-    <text x="120" y="142" fill="#002147" font-size="26">SNORKELING</text>
-    <text x="120" y="184" fill="#002147" opacity=".7" font-size="18">Surface / mask / no tank</text>
+  <g transform="translate(90 504)">
+    <path d="M22 138c52-120 112-120 164 0" fill="none" stroke="#F5F5DC" stroke-width="22" stroke-linecap="round"/>
+    <path d="M190 152c50-96 104-96 154 0" fill="none" stroke="#00CED1" stroke-width="18" stroke-linecap="round"/>
+    <path d="M388 148c42-78 88-78 130 0" fill="none" stroke="#F5F5DC" stroke-width="16" stroke-linecap="round"/>
   </g>
-  <g fill="none" stroke-linecap="round" stroke-width="10">
-    <path d="M120 560h172" stroke="#002147"/>
-    <path d="M120 592h244" stroke="#00CED1"/>
-    <path d="M120 624h134" stroke="#333333"/>
+  <g fill="#F5F5DC">
+    <path d="M794 506c44-26 86-26 130 0-44 26-86 26-130 0Z"/>
+    <circle cx="912" cy="506" r="5" fill="#002147"/>
+    <path d="M908 568c38-22 74-22 112 0-38 22-74 22-112 0Z"/>
+    <circle cx="1010" cy="568" r="4" fill="#002147"/>
+  </g>
+  <g fill="#00CED1" opacity=".88">
+    <circle cx="176" cy="260" r="10"/>
+    <circle cx="218" cy="220" r="6"/>
+    <circle cx="986" cy="292" r="9"/>
+    <circle cx="1042" cy="246" r="5"/>
   </g>
 </svg>
