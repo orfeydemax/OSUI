@@ -19,9 +19,11 @@ export default function FamilyPage() {
     <>
       <section className="hero" style={{ minHeight: '80vh' }}>
         <div className="hero__bg">
-          <div className="img-placeholder" style={{ width:'100%', height:'100%', borderRadius:0 }}>
-            Фото: семья на лодке
-          </div>
+          <img
+            src="/images/generated/family-boat.svg"
+            alt="Семья на лодке"
+            className="generated-visual"
+          />
         </div>
         <div className="hero__overlay" />
         <div className="container hero__content">
@@ -48,14 +50,14 @@ export default function FamilyPage() {
       <section className="section">
         <div className="container">
           <div className="section__header"><h2>Как совместить дайвинг и снорклинг</h2></div>
-          <div style={{ maxWidth:'700px', margin:'0 auto' }}>
-            <p style={{ fontSize:'1.05rem', textAlign:'center' }}>
+          <div className="center-content">
+            <p className="page-lede">
               Каждый член семьи выбирает свой формат. Дети могут плавать с маской,
               родители — попробовать дайвинг. Все едут на одной лодке и проводят
               день вместе.
             </p>
           </div>
-          <div className="programs-grid" style={{ marginTop:'40px' }}>
+          <div className="programs-grid programs-grid--spaced">
             <div className="card">
               <div className="card__price">95$</div>
               <div className="card__title">Дайвинг</div>
@@ -67,7 +69,7 @@ export default function FamilyPage() {
               <p className="card__desc">Для тех, кто хочет море без акваланга.</p>
             </div>
             <div className="card">
-              <div className="card__price" style={{ fontSize:'1.2rem', color:'var(--navy)' }}>По запросу</div>
+              <div className="card__price card__price--request">По запросу</div>
               <div className="card__title">Индивидуальный формат</div>
               <p className="card__desc">Обсудим состав семьи и подберём оптимальный вариант.</p>
             </div>

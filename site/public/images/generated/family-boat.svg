@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Family boat illustration</title>
+  <desc id="desc">A family day on a dive boat in a stylized marine UI-kit scene.</desc>
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#F5F5DC" opacity=".26"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="760" rx="36" fill="#202222"/>
+  <rect width="1200" height="760" fill="url(#dots)"/>
+  <rect x="54" y="54" width="1092" height="652" rx="28" fill="#F3F1F1"/>
+  <rect x="88" y="88" width="280" height="560" rx="22" fill="#F5F5DC"/>
+  <rect x="408" y="92" width="704" height="186" rx="22" fill="#002147"/>
+  <path d="M408 510c102-54 210-54 324 0s230 54 380 0v128H408Z" fill="#00CED1"/>
+  <path d="M498 410h424l-72 86H566Z" fill="#002147"/>
+  <rect x="590" y="328" width="242" height="82" rx="12" fill="#F5F5DC"/>
+  <path d="M712 328V238" stroke="#333333" stroke-width="14" stroke-linecap="round"/>
+  <path d="M712 248l164 80H712Z" fill="#00CED1"/>
+  <g fill="#333333">
+    <circle cx="630" cy="382" r="22"/>
+    <circle cx="708" cy="382" r="22"/>
+    <circle cx="786" cy="382" r="22"/>
+  </g>
+  <g font-family="Manrope, sans-serif" font-weight="800">
+    <text x="120" y="148" fill="#002147" font-size="28">FAMILY DAY</text>
+    <text x="120" y="192" fill="#333333" opacity=".72" font-size="18">boat / snorkel / dive</text>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="10">
+    <path d="M120 518h162" stroke="#002147"/>
+    <path d="M120 550h204" stroke="#00CED1"/>
+    <path d="M120 582h128" stroke="#333333"/>
+  </g>
+</svg>

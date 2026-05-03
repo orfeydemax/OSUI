@@ -12,9 +12,11 @@ export default function CouplesPage() {
     <>
       <section className="hero" style={{ minHeight: '80vh' }}>
         <div className="hero__bg">
-          <div className="img-placeholder" style={{ width:'100%', height:'100%', borderRadius:0 }}>
-            Фото: пара под водой
-          </div>
+          <img
+            src="/images/generated/couples-dive.svg"
+            alt="Пара под водой"
+            className="generated-visual"
+          />
         </div>
         <div className="hero__overlay" />
         <div className="container hero__content">
@@ -43,7 +45,7 @@ export default function CouplesPage() {
           <div className="section__header"><h2>Сценарии</h2></div>
           <div className="programs-grid">
             {['Свидание под водой', 'Подарок на день рождения', 'Годовщина', 'Предложение руки', 'Романтическая поездка', 'Красивый контент из отпуска'].map((s, i) => (
-              <div key={i} className="card" style={{ textAlign: 'center' }}>
+              <div key={i} className="card card--simple card--center">
                 <div className="card__title">{s}</div>
                 <p className="card__desc">Обсудим формат, съёмку и организацию заранее.</p>
               </div>
@@ -54,14 +56,14 @@ export default function CouplesPage() {
 
       <section className="section section--sand">
         <div className="container">
-          <div style={{ maxWidth:'700px', margin:'0 auto', textAlign:'center' }}>
+          <div className="center-content">
             <h2>Как организовать</h2>
-            <p style={{ marginTop:'16px', fontSize:'1.05rem' }}>
+            <p className="page-lede">
               Напишите Виктору в Telegram или WhatsApp. Расскажите, что за повод,
               сколько вас, нужна ли съёмка. Мы подберём формат, дату и локацию.
             </p>
             <a href={tgLink('couple')} target="_blank" rel="noopener noreferrer"
-              className="btn btn--primary" style={{ marginTop:'24px' }}
+              className="btn btn--primary"
               onClick={() => trackEvent('ClickCouples', { source: 'couples_organize' })}>
               Обсудить формат для двоих
             </a>

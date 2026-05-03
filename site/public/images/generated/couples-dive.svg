@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Couples diving illustration</title>
+  <desc id="desc">A romantic pair diving scene with abstract marine shapes.</desc>
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.4" fill="#F5F5DC" opacity=".25"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="760" rx="36" fill="#202222"/>
+  <rect width="1200" height="760" fill="url(#dots)"/>
+  <rect x="54" y="54" width="1092" height="652" rx="28" fill="#F3F1F1"/>
+  <rect x="88" y="88" width="1024" height="184" rx="22" fill="#002147"/>
+  <path d="M112 458c126-86 240-86 366 0s242 86 368 0 196-80 266-42v214H112Z" fill="#00CED1"/>
+  <path d="M142 522c134-54 250-52 348 0s218 54 360 0 202-60 250-28" fill="none" stroke="#F5F5DC" stroke-width="16" stroke-linecap="round"/>
+  <g transform="translate(355 305)" fill="#002147">
+    <circle cx="70" cy="58" r="38"/>
+    <rect x="34" y="96" width="72" height="126" rx="34"/>
+    <path d="M98 132c62 34 122 34 180 0" fill="none" stroke="#002147" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(628 305)" fill="#333333">
+    <circle cx="70" cy="58" r="38"/>
+    <rect x="34" y="96" width="72" height="126" rx="34"/>
+    <path d="M42 132c-62 34-122 34-180 0" fill="none" stroke="#333333" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <path d="M598 376c18-34 58-34 76 0 18-34 58-34 76 0 0 58-76 96-76 96s-76-38-76-96Z" fill="#D51F24"/>
+  <text x="118" y="150" fill="#F5F5DC" font-family="Manrope, sans-serif" font-size="30" font-weight="800">COUPLES FORMAT</text>
+  <text x="118" y="194" fill="#BFD8F8" font-family="Be Vietnam Pro, sans-serif" font-size="18">gift / date / underwater story</text>
+</svg>

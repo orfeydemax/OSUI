@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Victor instructor portrait illustration</title>
+  <desc id="desc">A stylized portrait card for a calm diving instructor.</desc>
+  <rect width="900" height="900" rx="36" fill="#F3F1F1"/>
+  <rect x="42" y="42" width="816" height="816" rx="28" fill="#F5F5DC"/>
+  <rect x="42" y="42" width="816" height="230" rx="28" fill="#002147"/>
+  <circle cx="450" cy="372" r="132" fill="#333333"/>
+  <circle cx="450" cy="330" r="92" fill="#F5F5DC"/>
+  <rect x="314" y="474" width="272" height="246" rx="128" fill="#002147"/>
+  <path d="M302 590c-92 46-152 116-180 210" fill="none" stroke="#002147" stroke-width="46" stroke-linecap="round"/>
+  <path d="M598 590c92 46 152 116 180 210" fill="none" stroke="#002147" stroke-width="46" stroke-linecap="round"/>
+  <rect x="342" y="306" width="216" height="52" rx="24" fill="#00CED1"/>
+  <path d="M384 332h132" stroke="#002147" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="386" cy="764" r="28" fill="#00CED1"/>
+  <circle cx="514" cy="764" r="28" fill="#00CED1"/>
+  <text x="78" y="122" fill="#F5F5DC" font-family="Manrope, sans-serif" font-size="34" font-weight="800">VICTOR</text>
+  <text x="78" y="170" fill="#BFD8F8" font-family="Be Vietnam Pro, sans-serif" font-size="22">SSI instructor / calm first dives</text>
+</svg>

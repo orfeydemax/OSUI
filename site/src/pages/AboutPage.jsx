@@ -11,24 +11,26 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="section" style={{ paddingTop: '120px' }}>
+      <section className="section">
         <div className="container">
           <div className="about-victor">
             <div className="about-victor__img">
-              <div className="img-placeholder" style={{ width:'100%', height:'100%', borderRadius:0 }}>
-                Фото: портрет Виктора
-              </div>
+              <img
+                src="/images/generated/victor-portrait.svg"
+                alt="Портрет инструктора Виктора"
+                className="generated-visual"
+              />
             </div>
             <div>
-              <h1 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.4rem)' }}>
+              <h1>
                 Виктор: инструктор, который помогает новичкам спокойно сделать первое погружение
               </h1>
-              <p style={{ marginTop:'20px', fontSize:'1.1rem', lineHeight:'1.8' }}>
+              <p className="page-lede">
                 Для Виктора дайвинг — не просто работа на море. Это способ показать человеку,
                 что страх можно пройти спокойно. Особенно в первый раз, когда под водой важны
                 не глубина и не красивые слова, а доверие к инструктору.
               </p>
-              <p style={{ color:'var(--text-muted)' }}>
+              <p className="page-lede page-lede--muted">
                 Виктор ушёл из офисной жизни в Москве и сделал дайвинг делом жизни.
                 Сейчас он помогает людям в Нячанге впервые увидеть подводный мир
                 спокойно и безопасно. Его подход простой: сначала человек должен
@@ -48,14 +50,14 @@ export default function AboutPage() {
       <section className="section section--sand">
         <div className="container">
           <div className="section__header"><h2>Подход к новичкам</h2></div>
-          <div style={{ maxWidth:'700px', margin:'0 auto' }}>
-            <p style={{ fontSize:'1.1rem', textAlign:'center' }}>
+          <div className="center-content">
+            <p className="page-lede">
               Для первого погружения важен не только акваланг. Важен человек,
               который будет рядом, когда вы впервые окажетесь под водой.
               Виктор спокойно объясняет, не торопит и помогает пройти первый
               опыт без лишнего стресса.
             </p>
-            <p style={{ textAlign:'center', color:'var(--text-muted)', marginTop:'16px' }}>
+            <p className="page-lede page-lede--muted">
               Это не потоковый формат, где вас быстро провели по программе.
               Здесь новичка ведут рядом и по-человечески.
             </p>
@@ -66,25 +68,27 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <div className="section__header"><h2>Сертификаты</h2></div>
-          <div className="img-placeholder" style={{ maxWidth:'600px', margin:'0 auto', aspectRatio:'16/9' }}>
-            Фото: сертификаты Виктора (SSI)
-          </div>
+          <img
+            src="/images/generated/certificates.svg"
+            alt="Сертификаты Виктора SSI"
+            className="generated-visual generated-visual--certificate"
+          />
         </div>
       </section>
 
       <section className="section section--sand">
         <div className="container">
           <div className="section__header"><h2>Программы</h2></div>
-          <div className="programs-grid" style={{ maxWidth:'800px', margin:'0 auto' }}>
-            <Link to="/beginner-diving-nha-trang" className="card" style={{ textDecoration:'none' }}>
+          <div className="programs-grid programs-grid--compact">
+            <Link to="/beginner-diving-nha-trang" className="card card--simple">
               <div className="card__title">Дайвинг для новичков</div>
               <p className="card__desc">95$ · 2 погружения</p>
             </Link>
-            <Link to="/snorkeling-nha-trang" className="card" style={{ textDecoration:'none' }}>
+            <Link to="/snorkeling-nha-trang" className="card card--simple">
               <div className="card__title">Снорклинг</div>
               <p className="card__desc">45$ · Море без акваланга</p>
             </Link>
-            <Link to="/diving-courses-nha-trang" className="card" style={{ textDecoration:'none' }}>
+            <Link to="/diving-courses-nha-trang" className="card card--simple">
               <div className="card__title">Обучение</div>
               <p className="card__desc">410$ · Open Water Diver</p>
             </Link>

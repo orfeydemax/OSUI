@@ -27,9 +27,11 @@ export default function CoursesPage() {
     <>
       <section className="hero" style={{ minHeight: '80vh' }}>
         <div className="hero__bg">
-          <div className="img-placeholder" style={{ width:'100%', height:'100%', borderRadius:0 }}>
-            Фото: обучение дайвингу
-          </div>
+          <img
+            src="/images/generated/dive-course.svg"
+            alt="Обучение дайвингу"
+            className="generated-visual"
+          />
         </div>
         <div className="hero__overlay" />
         <div className="container hero__content">
@@ -63,12 +65,12 @@ export default function CoursesPage() {
           </div>
           <div className="programs-grid">
             {courses.map((c, i) => (
-              <div key={i} className="card">
+              <div key={i} className="card card--cta">
                 <div className="card__price">{c.price}</div>
                 <div className="card__title">{c.name}</div>
                 <p className="card__desc">{c.desc}</p>
                 <a href={tgLink('course')} target="_blank" rel="noopener noreferrer"
-                  className="btn btn--primary" style={{ width:'100%' }}
+                  className="btn btn--primary"
                   onClick={() => trackEvent('ClickCourses', { course: c.name })}>
                   Узнать подробнее
                 </a>

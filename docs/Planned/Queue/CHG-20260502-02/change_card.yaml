@@ -1,0 +1,16 @@
+stage: plan
+track: ''
+change_type: infra
+human_owner: 'max'
+ai_operator: 'Antigravity'
+ai_mode: ai_assisted
+ai_evidence_log_required: false
+summary: 'Подготовка проекта к релизу: базовая SEO-оптимизация (Robots, Sitemap, Meta tags) и подготовка конфигурации для деплоя на хостинг.'
+problem_statement: 'Сайт полностью готов визуально, но не имеет метаданных для индексации поисковиками и не развернут на хостинге, из-за чего недоступен для реальных клиентов.'
+expected_outcome: 'Проект готов к сборке (npm run build), содержит все SEO метатеги (OpenGraph, Title, Description), настроены реальные UTM-метки и ссылки на WhatsApp/Telegram, готов к развертыванию.'
+failure_definition: 'Сборка падает, ломаются пути к ассетам, сайт блокируется от индексации, не работают контактные ссылки.'
+what_must_not_break: 'Дизайн (Derzayn UI), корректная загрузка шрифтов и логотипа, работа React Router при прямых заходах на страницы (требуется редирект для SPA).'
+project_name: 'Victor DivePro'
+project_schema: 'victor_divepro'
+framing_required: false
+next_action: 'Переход к /route для определения трека (Core) и выбора инфраструктуры для деплоя.'

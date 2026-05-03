@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Dive course illustration</title>
+  <desc id="desc">A dive education and certification board with marine diagrams.</desc>
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#F5F5DC" opacity=".25"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="760" rx="36" fill="#202222"/>
+  <rect width="1200" height="760" fill="url(#dots)"/>
+  <rect x="54" y="54" width="1092" height="652" rx="28" fill="#F3F1F1"/>
+  <rect x="88" y="88" width="444" height="584" rx="22" fill="#002147"/>
+  <rect x="130" y="144" width="360" height="86" rx="12" fill="#F5F5DC"/>
+  <rect x="130" y="268" width="360" height="26" rx="8" fill="#00CED1"/>
+  <rect x="130" y="318" width="278" height="20" rx="7" fill="#F5F5DC" opacity=".82"/>
+  <rect x="130" y="366" width="318" height="20" rx="7" fill="#F5F5DC" opacity=".62"/>
+  <rect x="592" y="88" width="520" height="250" rx="22" fill="#F5F5DC"/>
+  <rect x="592" y="374" width="240" height="298" rx="22" fill="#00CED1"/>
+  <rect x="872" y="374" width="240" height="298" rx="22" fill="#333333"/>
+  <circle cx="852" cy="214" r="72" fill="#002147"/>
+  <path d="M820 214h64M852 182v64" stroke="#F5F5DC" stroke-width="12" stroke-linecap="round"/>
+  <path d="M654 512c76-42 136-42 212 0" fill="none" stroke="#002147" stroke-width="18" stroke-linecap="round"/>
+  <path d="M922 512c46-52 92-52 138 0" fill="none" stroke="#F5F5DC" stroke-width="18" stroke-linecap="round"/>
+  <text x="130" y="194" fill="#002147" font-family="Manrope, sans-serif" font-size="28" font-weight="800">SSI COURSE</text>
+  <text x="130" y="592" fill="#F5F5DC" font-family="Be Vietnam Pro, sans-serif" font-size="20">Theory / skills / open water</text>
+</svg>

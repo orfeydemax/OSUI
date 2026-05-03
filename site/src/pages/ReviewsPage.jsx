@@ -49,10 +49,10 @@ export default function ReviewsPage() {
 
   return (
     <>
-      <section className="section" style={{ paddingTop: '120px' }}>
+      <section className="section">
         <div className="container">
           <div className="section__header">
-            <h1 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.5rem)' }}>
+            <h1>
               Что говорят те, кто тоже боялся в первый раз
             </h1>
             <p className="section__subtitle">
@@ -61,12 +61,12 @@ export default function ReviewsPage() {
           </div>
 
           {reviewGroups.map((group, gi) => (
-            <div key={gi} style={{ marginBottom: '56px' }}>
-              <h2 style={{ marginBottom: '24px', fontSize: '1.5rem' }}>{group.title}</h2>
+            <div key={gi} className="review-group">
+              <h2 className="review-group__title">{group.title}</h2>
               <div className="reviews-grid">
                 {group.items.map((r, ri) => (
                   <div key={ri} className="review-card">
-                    <div className="review-card__stars">★★★★★</div>
+                    <div className="review-card__stars">5/5</div>
                     <p className="review-card__text">«{r.text}»</p>
                     <div className="review-card__author">{r.author}</div>
                     <span className="review-card__tag">{group.title}</span>

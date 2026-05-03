@@ -23,7 +23,7 @@ export default function MobileBar() {
         >
           WhatsApp
         </a>
-        <Link to="/#programs" className="btn btn--white" style={{ color: 'var(--navy)' }}>
+        <Link to="/#programs" className="btn btn--white">
           Цены
         </Link>
       </div>

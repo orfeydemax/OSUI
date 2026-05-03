@@ -1,0 +1,19 @@
+change_id: CHG-20260502-02
+change_type: infra # Deployment and SEO
+scope:
+  touched_entities:
+    - index.html (meta tags, title, OG tags)
+    - src/utils.js (боевые номера и ссылки)
+    - robots.txt / sitemap.xml
+    - vite.config.js / package.json (настройка сборки)
+  touched_roles: []
+  touched_interfaces: []
+  touched_data: []
+  touched_services: ["Vercel/Netlify/Hosting"]
+  touched_modules: ["Build configuration"]
+risks:
+  history_risk: Low
+  client_risk: Low
+  business_risk: High (если не развернуть, сайт недоступен)
+  production_risk: Medium (ошибки деплоя или билд-процесса)
+track_guess: Core

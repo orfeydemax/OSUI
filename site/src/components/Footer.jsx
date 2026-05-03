@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer__inner">
           <div>
             <div className="footer__brand">
-              <img src="/images/logo.jpg" alt="Victor DivePro" style={{ height: '56px', borderRadius: '8px' }} />
+              <img src="/images/logo.jpg" alt="Victor DivePro" className="footer__logo" />
             </div>
             <p className="footer__desc">
               Персональный дайвинг и снорклинг в Нячанге с русскоговорящим инструктором.

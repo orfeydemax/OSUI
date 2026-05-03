@@ -22,9 +22,11 @@ export default function BeginnerPage() {
     <>
       <section className="hero" style={{ minHeight: '80vh' }}>
         <div className="hero__bg">
-          <div className="img-placeholder" style={{ width:'100%', height:'100%', borderRadius:0 }}>
-            Фото: новичок под водой с инструктором
-          </div>
+          <img
+            src="/images/generated/beginner-dive.svg"
+            alt="Новичок под водой с инструктором"
+            className="generated-visual"
+          />
         </div>
         <div className="hero__overlay" />
         <div className="container hero__content">
@@ -58,7 +60,7 @@ export default function BeginnerPage() {
           <div className="section__header">
             <h2>Для кого эта программа</h2>
           </div>
-          <ul className="identify-list" style={{ maxWidth:'600px', margin:'0 auto' }}>
+          <ul className="identify-list content-list">
             <li>Вы ни разу не погружались с аквалангом</li>
             <li>Не умеете плавать — это не проблема</li>
             <li>Боитесь воды или глубины</li>
@@ -71,7 +73,7 @@ export default function BeginnerPage() {
       <section className="section section--sand">
         <div className="container">
           <div className="section__header"><h2>Что входит в программу</h2></div>
-          <div className="card" style={{ maxWidth:'600px', margin:'0 auto', borderTop:'4px solid var(--teal)' }}>
+          <div className="card price-card">
             <div className="card__price">95$</div>
             <ul className="card__features">
               <li>2 погружения по 35–40 минут</li>
@@ -81,7 +83,7 @@ export default function BeginnerPage() {
               <li>Инструктор рядом на каждом этапе</li>
               <li>Лодка до места погружения</li>
             </ul>
-            <p style={{ color:'var(--text-muted)', fontSize:'0.9rem', marginTop:'12px' }}>
+            <p className="note-text">
               Съёмка, трансфер и питание оплачиваются отдельно.
             </p>
           </div>
@@ -91,8 +93,8 @@ export default function BeginnerPage() {
       <section className="section">
         <div className="container">
           <div className="section__header"><h2>Почему не страшно</h2></div>
-          <div style={{ maxWidth:'700px', margin:'0 auto' }}>
-            <p style={{ fontSize:'1.1rem', textAlign:'center' }}>
+          <div className="center-content">
+            <p className="page-lede">
               Перед первым погружением волнуются почти все. Мы не торопим.
               Сначала спокойно объясняем, потом проверяем снаряжение,
               потом идём в воду постепенно. Ваша задача — спокойно дышать

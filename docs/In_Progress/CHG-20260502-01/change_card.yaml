@@ -1,6 +1,6 @@
 id: "CHG-20260502-01"
 title: "Косметический редизайн сайта Victor DivePro"
-stage: "build"
+stage: "release"
 track: "core"
 change_type: "enhancement"
 
@@ -42,10 +42,10 @@ gates:
   business_priority: "approved"
   contradiction_resolution: "approved"
   track_approval: "approved"
-  verification_go: "not_started"
+  verification_go: "pending_human"
   release_approval: "not_started"
   rollback_restore_decision: "not_started"
 
-next_action: "Implement redesign"
+next_action: "Wait for MAX to approve Verification Go/No-Go Gate"
 source_of_truth: docs/In_Progress/CHG-20260502-01/change_card.yaml
-updated_at: "2026-05-02T10:03:00Z"
+updated_at: "2026-05-02T10:06:00Z"

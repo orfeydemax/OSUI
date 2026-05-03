@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Beginner diving illustration</title>
+  <desc id="desc">A calm instructor guides a beginner diver in a stylized marine UI-kit scene.</desc>
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#F5F5DC" opacity=".28"/>
+    </pattern>
+    <linearGradient id="water" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#002147"/>
+      <stop offset=".54" stop-color="#006b78"/>
+      <stop offset="1" stop-color="#00CED1"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#002147" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="36" fill="#202222"/>
+  <rect width="1200" height="760" fill="url(#dots)"/>
+  <rect x="54" y="54" width="1092" height="652" rx="28" fill="#F3F1F1" filter="url(#shadow)"/>
+  <rect x="82" y="82" width="1036" height="208" rx="22" fill="#002147"/>
+  <path d="M82 270c132-36 226 34 358 0 132-34 244-98 386-54 102 32 188 18 292-34v214H82Z" fill="#00CED1" opacity=".9"/>
+  <path d="M82 342c126-26 216 36 346 12 150-28 268-86 428-32 88 30 174 18 262-20v232H82Z" fill="#F5F5DC" opacity=".92"/>
+  <g transform="translate(310 316)">
+    <circle cx="110" cy="70" r="42" fill="#002147"/>
+    <rect x="64" y="106" width="96" height="158" rx="46" fill="#002147"/>
+    <path d="M153 138c76 20 118 74 132 162" fill="none" stroke="#002147" stroke-width="28" stroke-linecap="round"/>
+    <path d="M65 142c-70 34-108 88-116 164" fill="none" stroke="#002147" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="110" cy="70" r="22" fill="#F5F5DC"/>
+    <path d="M88 70h44" stroke="#00CED1" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(610 278)">
+    <circle cx="116" cy="74" r="46" fill="#333333"/>
+    <rect x="64" y="112" width="104" height="178" rx="50" fill="#333333"/>
+    <path d="M160 150c72 18 132 68 178 150" fill="none" stroke="#333333" stroke-width="28" stroke-linecap="round"/>
+    <path d="M74 154c-72 28-122 82-150 160" fill="none" stroke="#333333" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="116" cy="74" r="24" fill="#F5F5DC"/>
+    <path d="M92 74h48" stroke="#00CED1" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M166 604h190" stroke="#002147" stroke-width="10"/>
+    <path d="M166 634h302" stroke="#00CED1" stroke-width="10"/>
+    <path d="M166 664h238" stroke="#333333" stroke-width="10"/>
+  </g>
+  <text x="84" y="126" fill="#F5F5DC" font-family="Manrope, sans-serif" font-size="24" font-weight="800">BEGINNER DIVE</text>
+  <text x="84" y="164" fill="#BFD8F8" font-family="Be Vietnam Pro, sans-serif" font-size="18">2 clients / 1 instructor / calm first descent</text>
+</svg>

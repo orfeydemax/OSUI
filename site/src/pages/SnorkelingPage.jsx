@@ -20,9 +20,11 @@ export default function SnorkelingPage() {
     <>
       <section className="hero" style={{ minHeight: '80vh' }}>
         <div className="hero__bg">
-          <div className="img-placeholder" style={{ width:'100%', height:'100%', borderRadius:0 }}>
-            Фото: снорклинг в тропическом море
-          </div>
+          <img
+            src="/images/generated/snorkeling.svg"
+            alt="Снорклинг в тропическом море"
+            className="generated-visual"
+          />
         </div>
         <div className="hero__overlay" />
         <div className="container hero__content">
@@ -54,7 +56,7 @@ export default function SnorkelingPage() {
       <section className="section">
         <div className="container">
           <div className="section__header"><h2>Для кого подходит</h2></div>
-          <ul className="identify-list" style={{ maxWidth:'600px', margin:'0 auto' }}>
+          <ul className="identify-list content-list">
             <li>Вы не хотите погружаться с аквалангом</li>
             <li>Едете за компанию с дайверами</li>
             <li>Хотите просто красивый день на море</li>
@@ -67,7 +69,7 @@ export default function SnorkelingPage() {
       <section className="section section--sand">
         <div className="container">
           <div className="section__header"><h2>Что входит</h2></div>
-          <div className="card" style={{ maxWidth:'600px', margin:'0 auto', borderTop:'4px solid var(--teal)' }}>
+          <div className="card price-card">
             <div className="card__price">45$</div>
             <ul className="card__features">
               <li>Лодка до места снорклинга</li>
