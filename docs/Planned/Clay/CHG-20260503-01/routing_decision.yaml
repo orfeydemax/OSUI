@@ -1,0 +1,68 @@
+change_id: CHG-20260503-01
+decided_at: "2026-05-03T20:31:00+07:00"
+
+selected_track: Extended
+routing_score: 2
+routing_score_reasoning: >
+  Базовый score = 2 (multiple layers: JSX + CSS + Navbar).
+  Принудительная эскалация с Core до Extended по V9.1 brownfield safeguards:
+  1. Изменение visible user flow (главный экран, navbar, layout главной страницы).
+  2. Отсутствие protected_behavior_contract.md для затронутой shared UI surface.
+
+forced_escalation_reason: >
+  V9.1 §6 — два trigger:
+  (1) Change to visible user flow (navigation, main screen layout)
+  (2) No protected_behavior_contract.md for affected shared UI surface
+  → Extended+ minimum
+
+harness_check_result:
+  capture_baseline: working
+  replay_protected_flow: partial  # manual checklist only, no E2E
+  run_targeted_verify: working    # browser at localhost:5173
+  harness_gap: false
+
+baseline_confidence:
+  product_surface_state: mismatched  # OSUI-system file, not Victor DivePro site
+  protected_behavior_contract: missing
+  baseline_repo_commit: "831b45f"
+  status: acceptable  # git diff provides baseline; prod site available for comparison
+
+agent_fit: high
+paired_mode_required: false
+manual_first_required: false
+
+required_artifacts:
+  - change_card.yaml               # exists
+  - plan.md                        # exists
+  - routing_decision.yaml          # this file
+  - protected_behavior_contract.md # MUST CREATE before build verification
+  - verification_checklist.md      # to be created during /verify
+  - CHANGELOG.md entry             # after release
+
+affected_surfaces:
+  - site/src/pages/HomePage.jsx    # hero section, how-it-works, victor block
+  - site/src/components/Navbar.jsx # logo+text, menu, sticky bottom bar
+  - site/src/index.css             # hero-new, route-cards, trust-items, navbar overrides
+
+not_affected:
+  - All other pages (Beginner, Snorkeling, Couples, Family, Courses, About, Reviews, Contacts)
+  - Footer.jsx, MobileBar.jsx, FaqSection.jsx, CtaFinal.jsx
+  - Routing (App.jsx)
+  - Design tokens (:root CSS variables)
+
+build_status: >
+  PARTIAL — код изменён на ветке chg/CHG-20260503-01 (нарушение OSUI: build до route).
+  Требует верификации и человеческого подтверждения перед мержем в main.
+
+forbidden_shortcuts:
+  - Merge to main without /verify
+  - Skip protected_behavior_contract.md creation
+  - Close Human Gate (track approval) without human response
+
+gates:
+  track_approval: pending_human
+  problem_definition: approved
+  brief_origin: approved
+
+approved_by: ""
+approved_at: ""

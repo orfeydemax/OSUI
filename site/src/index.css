@@ -3657,7 +3657,7 @@ body {
 }
 
 .hero-new__title {
-  font-size: clamp(44px, 7vw, 100px);
+  font-size: clamp(44px, 6vw, 96px);
   line-height: 1.05;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -3874,3 +3874,79 @@ body {
 }
 
 /* --- END HERO NEW REDESIGN --- */
+
+/* --- HERO FIXES v2 --- */
+
+/* Override global h1 inside hero--new */
+.hero--new h1.hero-new__title {
+  font-size: clamp(44px, 6vw, 96px) !important;
+  max-inline-size: 100%;
+  line-height: 1.0;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+}
+
+/* Ensure hero--new has a light background for contrast */
+.hero--new {
+  background: linear-gradient(160deg, #f5f9ff 0%, #eaf6f7 50%, #f0f8ff 100%);
+}
+
+/* Fix hero-new__title color on light bg */
+.hero-new__title {
+  color: var(--primary);
+}
+
+/* Fix hero-new__subtitle visibility */
+.hero-new__subtitle {
+  color: var(--neutral);
+}
+
+/* Trust items - ensure text is visible */
+.trust-item {
+  color: var(--neutral);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Navbar floating style override - lighter & cleaner */
+.navbar {
+  inset: 16px 16px auto !important;
+  width: calc(100% - 32px) !important;
+  margin: 0 !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(0, 33, 71, 0.08) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+  height: 72px !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar__inner {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* hero top padding adjusts for floating navbar (72px height + 16px margin + gap) */
+.hero--new {
+  padding-top: 112px !important;
+}
+
+/* Route cards on light background */
+.route-card {
+  background: white;
+  border: 1px solid rgba(0, 33, 71, 0.07);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Badge visible on light bg */
+.hero-new__badge {
+  color: #008080;
+  background: rgba(0, 206, 209, 0.12);
+}
+
+/* --- END HERO FIXES v2 --- */

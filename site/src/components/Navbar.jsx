@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { tgLink, trackEvent } from '../utils';
+import { tgLink, waLink, trackEvent } from '../utils';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +35,7 @@ export default function Navbar() {
           <div className="navbar__links">
             {links.map(l => (
               l.to.startsWith('/#') ? (
-                <a key={l.to} href={l.to.replace('/', '')}>{l.label}</a>
+                <a key={l.to} href={l.to.slice(1)}>{l.label}</a>
               ) : (
                 <Link key={l.to} to={l.to}>{l.label}</Link>
               )
@@ -64,7 +64,7 @@ export default function Navbar() {
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         {links.map(l => (
           l.to.startsWith('/#') ? (
-            <a key={l.to} href={l.to.replace('/', '')} onClick={() => setMenuOpen(false)}>{l.label}</a>
+            <a key={l.to} href={l.to.slice(1)} onClick={() => setMenuOpen(false)}>{l.label}</a>
           ) : (
             <Link key={l.to} to={l.to} onClick={() => setMenuOpen(false)}>{l.label}</Link>
           )
