@@ -96,37 +96,18 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero hero--culture" id="hero">
-        <div className="culture-hero__stage">
-          <div className="culture-hero__nav" aria-label="Hero navigation context">
-            <a href="/" className="culture-hero__brand" aria-label="Victor DivePro">
-              <img src="/images/logo.jpg" alt="Victor DivePro" />
-              <span>Victor DivePro</span>
-            </a>
-            <div className="culture-hero__links">
-              <a href="#main-program">Дайвинг</a>
-              <a href="#snorkeling">Снорклинг</a>
-              <a href="#programs">Для пары</a>
-              <a href="#underwater">Что увидите</a>
-              <a href="#reviews">Отзывы</a>
-            </div>
-            <a href={tgLink('general')} target="_blank" rel="noopener noreferrer" className="culture-hero__nav-cta">
-              Написать
-            </a>
-          </div>
-
-          <div className="culture-hero__copy">
-            <p className="culture-hero__eyebrow">Нячанг · персональные погружения · команда инструкторов</p>
-            <h1>
-              <span>Дайвинг</span>
-              <span>без</span>
-              <span>суеты</span>
+      <section className="hero hero--new" id="hero">
+        <div className="container hero-new__grid">
+          <div className="hero-new__left">
+            <div className="hero-new__badge">Нячанг · трансфер из отеля · русскоязычный инструктор</div>
+            <h1 className="hero-new__title">
+              Дайвинг<br />
+              без суеты
             </h1>
-            <p className="culture-hero__text">
-              Сертифицированные инструкторы Victor DivePro ведут новичка спокойно:
-              объясняют дыхание, проверяют снаряжение и остаются рядом под водой.
+            <p className="hero-new__subtitle">
+              Первое погружение в Нячанге без опыта и лишней нервотрёпки. Заберём из отеля, объясним дыхание простыми словами, проверим снаряжение и будем рядом под водой.
             </p>
-            <div className="culture-hero__actions">
+            <div className="hero-new__actions">
               <a
                 href={tgLink('beginner')}
                 target="_blank"
@@ -134,7 +115,7 @@ export default function HomePage() {
                 className="btn btn--primary"
                 onClick={() => trackEvent('ClickTelegram', { source: 'hero' })}
               >
-                Узнать даты
+                Узнать свободные даты
               </a>
               <a
                 href={waLink('general')}
@@ -143,16 +124,66 @@ export default function HomePage() {
                 className="btn btn--outline"
                 onClick={() => trackEvent('ClickWhatsApp', { source: 'hero' })}
               >
-                WhatsApp
+                Написать инструктору
               </a>
+            </div>
+            <p className="hero-new__note">
+              Ответим в WhatsApp или Telegram. Можно просто спросить, подойдёт ли вам погружение.
+            </p>
+
+            <div className="hero-new__trust">
+              <div className="trust-item">
+                <span className="trust-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                Можно без опыта
+              </div>
+              <div className="trust-item">
+                <span className="trust-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                Инструктор рядом под водой
+              </div>
+              <div className="trust-item">
+                <span className="trust-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                Трансфер из отеля и обратно
+              </div>
+              <div className="trust-item">
+                <span className="trust-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                Снаряжение входит в программу
+              </div>
             </div>
           </div>
 
-          <div className="culture-hero__collage" aria-label="Форматы дайвинга Victor DivePro">
-            <img src="/images/generated/couples-dive.svg" alt="Дайвинг для пары" className="culture-hero__image culture-hero__image--small" />
-            <img src="/images/generated/family-boat.svg" alt="Семейный день на лодке" className="culture-hero__image culture-hero__image--wide" />
-            <img src="/images/generated/beginner-dive.svg" alt="Первое погружение с инструктором" className="culture-hero__image culture-hero__image--main" />
-            <img src="/images/generated/snorkeling.svg" alt="Снорклинг над рифом" className="culture-hero__image culture-hero__image--tall" />
+          <div className="hero-new__right route-cards">
+            <div className="route-card">
+              <div className="route-card__img-wrap">
+                <img src="/images/generated/family-boat.svg" alt="Отель" />
+              </div>
+              <div className="route-card__title">1. Забираем из отеля</div>
+            </div>
+            <div className="route-card">
+              <div className="route-card__img-wrap">
+                <img src="/images/generated/victor-portrait.svg" alt="Инструктаж" />
+              </div>
+              <div className="route-card__title">2. Инструктаж</div>
+            </div>
+            <div className="route-card">
+              <div className="route-card__img-wrap">
+                <img src="/images/generated/beginner-dive.svg" alt="Погружение" />
+              </div>
+              <div className="route-card__title">3. Погружение</div>
+            </div>
+            <div className="route-card">
+              <div className="route-card__img-wrap">
+                <img src="/images/generated/snorkeling.svg" alt="Возвращаем обратно" />
+              </div>
+              <div className="route-card__title">4. Возвращаем обратно</div>
+            </div>
           </div>
         </div>
       </section>
@@ -225,23 +256,21 @@ export default function HomePage() {
             />
             <div>
               <p className="text-meta">Инструктор рядом</p>
-              <h2>Команда не торопит. Вас проводят через первый страх</h2>
+              <h2>С вами будет Victor DivePro</h2>
             </div>
           </div>
           <div className="victor-copy">
             <p className="lead">
-              Для первого погружения важен не только акваланг. Важен инструктор,
-              которому вы доверите первые минуты под водой. В Victor DivePro работают
-              квалифицированные дайверы с сертификацией и опытом сопровождения новичков.
+              Инструктор объясняет спокойно, проверяет снаряжение и не торопит. Подходит для первого погружения, пар и тех, кто не уверен в воде.
             </p>
             <div className="about-victor__facts">
               <div className="fact"><div className="fact__num">11</div><div className="fact__label">лет опыта</div></div>
-              <div className="fact"><div className="fact__num">15 600+</div><div className="fact__label">клиентов</div></div>
-              <div className="fact"><div className="fact__num">SSI</div><div className="fact__label">сертификация</div></div>
+              <div className="fact"><div className="fact__num">Русский</div><div className="fact__label">и английский языки</div></div>
               <div className="fact"><div className="fact__num">2:1</div><div className="fact__label">клиент/инструктор</div></div>
+              <div className="fact"><div className="fact__num">SSI</div><div className="fact__label">сертификация</div></div>
             </div>
             <a href={tgLink('general')} target="_blank" rel="noopener noreferrer" className="btn btn--outline">
-              Написать команде
+              Написать инструктору
             </a>
           </div>
         </div>
@@ -345,15 +374,29 @@ export default function HomePage() {
         <div className="container">
           <div className="section__header section__header--offset">
             <p className="text-meta">День без хаоса</p>
-            <h2>Как всё проходит</h2>
+            <h2>Как проходит поездка</h2>
           </div>
-          <div className="steps">
-            {daySteps.map(([title, text]) => (
-              <div className="step" key={title}>
-                <div className="step__title">{title}</div>
-                <div className="step__text">{text}</div>
-              </div>
-            ))}
+          <div className="steps steps--line">
+            <div className="step">
+              <div className="step__title">1. Пишете нам</div>
+              <div className="step__text">Уточняем дату, состав и опыт.</div>
+            </div>
+            <div className="step">
+              <div className="step__title">2. Забираем из отеля</div>
+              <div className="step__text">Не нужно искать место сбора.</div>
+            </div>
+            <div className="step">
+              <div className="step__title">3. Проводим инструктаж</div>
+              <div className="step__text">Объясняем дыхание, жесты и безопасность.</div>
+            </div>
+            <div className="step">
+              <div className="step__title">4. Погружаемся</div>
+              <div className="step__text">Инструктор рядом, темп спокойный.</div>
+            </div>
+            <div className="step">
+              <div className="step__title">5. Возвращаем обратно</div>
+              <div className="step__text">После программы отвозим назад.</div>
+            </div>
           </div>
         </div>
       </section>

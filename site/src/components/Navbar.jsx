@@ -17,13 +17,11 @@ export default function Navbar() {
   useEffect(() => { setMenuOpen(false); }, [location]);
 
   const links = [
-    { to: '/', label: 'Главная' },
-    { to: '/beginner-diving-nha-trang', label: 'Дайвинг' },
-    { to: '/snorkeling-nha-trang', label: 'Снорклинг' },
-    { to: '/diving-for-couples-nha-trang', label: 'Для пары' },
-    { to: '/family-diving-snorkeling-nha-trang', label: 'Для семьи' },
-    { to: '/reviews', label: 'Отзывы' },
-    { to: '/contacts', label: 'Контакты' },
+    { to: '/#main-program', label: 'Дайвинг' },
+    { to: '/#snorkeling', label: 'Снорклинг' },
+    { to: '/#programs', label: 'Для пары' },
+    { to: '/#how-it-works', label: 'Как проходит' },
+    { to: '/#reviews', label: 'Отзывы' },
   ];
 
   return (
@@ -32,10 +30,15 @@ export default function Navbar() {
         <div className="container navbar__inner">
           <Link to="/" className="navbar__logo">
             <img src="/images/logo.jpg" alt="Victor DivePro" className="navbar__logo-img" />
+            <span className="navbar__logo-text">VICTOR DIVEPRO</span>
           </Link>
           <div className="navbar__links">
             {links.map(l => (
-              <Link key={l.to} to={l.to}>{l.label}</Link>
+              l.to.startsWith('/#') ? (
+                <a key={l.to} href={l.to.replace('/', '')}>{l.label}</a>
+              ) : (
+                <Link key={l.to} to={l.to}>{l.label}</Link>
+              )
             ))}
             <a
               href={tgLink('general')}
@@ -60,7 +63,11 @@ export default function Navbar() {
       {/* Мобильное меню */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         {links.map(l => (
-          <Link key={l.to} to={l.to}>{l.label}</Link>
+          l.to.startsWith('/#') ? (
+            <a key={l.to} href={l.to.replace('/', '')} onClick={() => setMenuOpen(false)}>{l.label}</a>
+          ) : (
+            <Link key={l.to} to={l.to} onClick={() => setMenuOpen(false)}>{l.label}</Link>
+          )
         ))}
         <a
           href={tgLink('general')}
@@ -70,6 +77,28 @@ export default function Navbar() {
           onClick={() => trackEvent('ClickTelegram', { source: 'mobile_menu' })}
         >
           Написать в Telegram
+        </a>
+      </div>
+
+      {/* Sticky Bottom Bar for Mobile */}
+      <div className="mobile-bottom-bar">
+        <a
+          href={tgLink('beginner')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn--primary"
+          onClick={() => trackEvent('ClickTelegram', { source: 'mobile_bottom_bar' })}
+        >
+          Узнать даты
+        </a>
+        <a
+          href={waLink('general')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn--outline"
+          onClick={() => trackEvent('ClickWhatsApp', { source: 'mobile_bottom_bar' })}
+        >
+          Написать
         </a>
       </div>
     </>
