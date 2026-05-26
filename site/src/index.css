@@ -3953,14 +3953,14 @@ body {
 
 /* --- BUILD v3: HERO SIZE FIX + TRUST ITEMS FIX --- */
 
-/* Уменьшаем hero высоту - убираем min-height чтобы всё помещалось */
+/* Hero spacing fix: let the section size itself naturally */
 .hero--new {
   min-height: auto !important;
   padding-top: 100px !important;
   padding-bottom: 48px !important;
 }
 
-/* Уменьшаем H1 ещё - сейчас он занимает 300px */
+/* Hero title fix: avoid oversized heading on medium screens */
 .hero--new h1.hero-new__title,
 .hero-new__title {
   font-size: clamp(40px, 5vw, 80px) !important;
@@ -3968,7 +3968,7 @@ body {
   margin-bottom: 20px !important;
 }
 
-/* Уменьшаем отступы внутри левой колонки */
+/* Reduce spacing between hero content blocks */
 .hero-new__left {
   gap: 0;
 }
@@ -3990,7 +3990,7 @@ body {
   margin-bottom: 28px !important;
 }
 
-/* Trust items - убеждаемся что видны */
+/* Trust items: keep all bullets visible */
 .hero-new__trust {
   display: flex !important;
   flex-direction: column !important;
@@ -4020,7 +4020,7 @@ body {
   color: #008080 !important;
 }
 
-/* Route cards - чуть компактнее */
+/* Route cards: tighten vertical rhythm */
 .route-cards {
   align-content: start !important;
 }

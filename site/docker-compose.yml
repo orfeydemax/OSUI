@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  victor_divepro_app:
+    build: .
+    container_name: victor_divepro_app
+    ports:
+      - "3015:80"
+    restart: unless-stopped
