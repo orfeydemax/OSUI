@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://divetest.mvprofi.org/sitemap.xml
+Sitemap: https://victordivepro.com/sitemap.xml

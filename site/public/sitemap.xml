@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://divetest.mvprofi.org/</loc>
+    <loc>https://victordivepro.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://divetest.mvprofi.org/beginner-diving-nha-trang</loc>
+    <loc>https://victordivepro.com/beginner-diving-nha-trang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://divetest.mvprofi.org/snorkeling-nha-trang</loc>
+    <loc>https://victordivepro.com/snorkeling-nha-trang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://divetest.mvprofi.org/diving-courses-nha-trang</loc>
+    <loc>https://victordivepro.com/diving-courses-nha-trang</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://divetest.mvprofi.org/about-victor</loc>
+    <loc>https://victordivepro.com/about-victor</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://divetest.mvprofi.org/reviews</loc>
+    <loc>https://victordivepro.com/reviews</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://divetest.mvprofi.org/contacts</loc>
+    <loc>https://victordivepro.com/contacts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

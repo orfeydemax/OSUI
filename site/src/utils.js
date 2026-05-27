@@ -4,7 +4,6 @@
 export const TG_USERNAME = 'victordivepro';
 
 // WhatsApp number (international format without +)
-// TODO: replace with the real Victor DivePro number
 export const WA_NUMBER = '84900000000';
 
 // Instagram

@@ -33,3 +33,12 @@ token.json
 vault_supabase/
 supabase/migrations/
 
+# Игнорировать все файлы и папки в корне, кроме разрешенных для проекта и ОСУИ
+/*
+!.gitignore
+!/site/
+!/docs/
+!/.agent/
+!/PROJECT_BRAIN.yaml
+!/AGENTS.md
+
